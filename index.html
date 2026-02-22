@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -30,10 +31,139 @@
   color: white;
   border-color: #0a66c2;
 }
+
+/* Squidbird logo in header */
+.logo .symbol img {
+  width: 32px;
+  height: auto;
+  filter: invert(1); /* make it white to match the dark header */
+}
+
+/* Login Modal Styles */
+#login-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+#login-modal.active {
+  display: flex;
+}
+#login-box {
+  background: #1a1a2e;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  position: relative;
+  font-family: inherit;
+}
+#login-box h3 {
+  margin: 0 0 24px 0;
+  color: #fff;
+  font-size: 1.4em;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+#login-box .squidbird-login-logo {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 48px;
+  height: auto;
+  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(160deg);
+}
+#login-box label {
+  display: block;
+  color: #aaa;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+#login-box input[type="text"],
+#login-box input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  background: #0d0d1a;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1em;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+#login-box input[type="text"]:focus,
+#login-box input[type="password"]:focus {
+  border-color: #00bcd4;
+}
+#login-submit {
+  width: 100%;
+  padding: 12px;
+  background: #00bcd4;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#login-submit:hover {
+  background: #0097a7;
+}
+#login-error {
+  display: none;
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: rgba(220, 50, 50, 0.15);
+  border: 1px solid rgba(220, 50, 50, 0.4);
+  border-radius: 6px;
+  color: #ff6b6b;
+  font-size: 0.9em;
+  text-align: center;
+}
+#login-close {
+  position: absolute;
+  top: 14px; right: 18px;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.4em;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+#login-close:hover {
+  color: #fff;
+}
 </style>
 
 </head>
 	<body class="is-preload">
+		<!-- Login Modal -->
+		<div id="login-modal">
+			<div id="login-box">
+				<button id="login-close" onclick="closeLogin()" aria-label="Close">&times;</button>
+				<img src="images/logo.svg" class="squidbird-login-logo" alt="Squidbird" />
+				<h3>Squidbird Login</h3>
+				<label for="login-username">Username</label>
+				<input type="text" id="login-username" placeholder="Enter username" autocomplete="off" />
+				<label for="login-password">Password</label>
+				<input type="password" id="login-password" placeholder="Enter password" />
+				<button id="login-submit" onclick="attemptLogin()">Log In</button>
+				<div id="login-error">Incorrect username or password. Please try again.</div>
+			</div>
+		</div>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -43,7 +173,7 @@
 
 							<!-- Logo -->
 								<a href="/" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">squidbird login</span>
+									<span class="symbol"><img src="images/logo.svg" alt="Squidbird" /></span><span class="title">squidbird</span>
 								</a>
 
 							<!-- Nav -->
@@ -61,7 +191,7 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="#WHATSQUIDBIRD">About</a></li>
-							<li><a href="https://www.squidbird.io/">Login</a></li>
+							<li><a href="#" onclick="openLogin(); return false;">Login</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
@@ -113,7 +243,8 @@
 
 								<hr />
 
-								<h1>Reporting starts at $200 per month. Email Justine@Squidbird.io for more details.</h1>
+								<h1>Reporting starts at $200 per month. Email <a href="mailto:Justine@Squidbird.io">Justine@Squidbird.io</a> for a free first month report.</h1>
+								<p style="font-size: 0.75em; color: #888; margin-top: -1em;">*Please include your name, company name, and TikTok, Instagram, and X handles.</p>
 
 								<hr />
 
@@ -166,6 +297,39 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<script>
+			function openLogin() {
+				document.getElementById('login-modal').classList.add('active');
+				document.getElementById('login-error').style.display = 'none';
+				document.getElementById('login-username').value = '';
+				document.getElementById('login-password').value = '';
+				setTimeout(function(){ document.getElementById('login-username').focus(); }, 100);
+			}
+
+			function closeLogin() {
+				document.getElementById('login-modal').classList.remove('active');
+			}
+
+			function attemptLogin() {
+				document.getElementById('login-error').style.display = 'block';
+			}
+
+			// Also allow pressing Enter to submit
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Enter' && document.getElementById('login-modal').classList.contains('active')) {
+					attemptLogin();
+				}
+				if (e.key === 'Escape' && document.getElementById('login-modal').classList.contains('active')) {
+					closeLogin();
+				}
+			});
+
+			// Close modal if clicking outside the box
+			document.getElementById('login-modal').addEventListener('click', function(e) {
+				if (e.target === this) closeLogin();
+			});
+		</script>
 
 	</body>
 </html>
