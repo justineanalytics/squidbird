@@ -156,9 +156,116 @@
 #login-close:hover {
   color: #fff;
 }
+
+/* ===== Color & visual refresh ===== */
+.brand-stripe {
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, #f2849e, #c75b9b, #ae85ca, #8499e7, #7ecaf6, #7bd0c1);
+}
+#header {
+  background: linear-gradient(135deg, #23233a 0%, #2c2350 55%, #1d3a4d 100%);
+}
+.hero-heading {
+  background: linear-gradient(90deg, #c75b9b, #ae85ca, #8499e7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #ae85ca;
+  -webkit-text-fill-color: transparent;
+}
+.pricing-banner {
+  background: linear-gradient(120deg, rgba(242,132,158,0.12), rgba(126,202,246,0.12));
+  border: 1px solid rgba(174,133,202,0.35);
+  border-radius: 12px;
+  padding: 1em 1.25em;
+}
+#WHATSQUIDBIRD, #WHYSQUIDBIRD {
+  display: inline-block;
+  padding-bottom: 0.2em;
+  border-bottom: 4px solid;
+}
+#WHATSQUIDBIRD { border-color: #7ecaf6; }
+#WHYSQUIDBIRD { border-color: #ae85ca; }
+#footer section:nth-of-type(1) h2 {
+  display: inline-block;
+  padding-bottom: 0.2em;
+  border-bottom: 4px solid #7bd0c1;
+}
+#footer section:nth-of-type(2) h2 {
+  display: inline-block;
+  padding-bottom: 0.2em;
+  border-bottom: 4px solid #f2849e;
+}
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85em;
+  padding: 0.3em 0.8em;
+  border-radius: 999px;
+  color: #fff !important;
+}
+.eyebrow b { color: #fff; }
+.eyebrow-blue { background: #7ecaf6; }
+.eyebrow-purple { background: #ae85ca; }
+.eyebrow-teal { background: #7bd0c1; }
+#main ul { padding-left: 0; }
+#main ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.3em;
+}
+#main ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: #8499e7;
+}
+ul.list-blue li:before { background: #7ecaf6; }
+ul.list-purple li:before { background: #ae85ca; }
+ul.list-teal li:before { background: #7bd0c1; }
+#main hr, #footer hr {
+  border: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #f2849e, #ae85ca, #7ecaf6, #7bd0c1);
+  margin: 2em 0;
+}
+.btn-gradient {
+  display: inline-block;
+  padding: 0.85em 1.7em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f2849e, #c75b9b);
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 18px rgba(199, 91, 155, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(199, 91, 155, 0.45);
+}
+#footer input[type="submit"].primary {
+  background: linear-gradient(90deg, #f2849e, #c75b9b);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(199, 91, 155, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#footer input[type="submit"].primary:hover {
+  background: linear-gradient(90deg, #f2849e, #c75b9b);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(199, 91, 155, 0.45);
+}
 </style>
 </head>
 	<body class="is-preload">
+		<div class="brand-stripe"></div>
 		<!-- Login Modal -->
 		<div id="login-modal">
 			<div id="login-box">
@@ -202,17 +309,15 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>A low-cost alternative to social media reporting—fully automated reports + Social Strategist insight. </h1>
+							<h1 class="hero-heading">A low-cost alternative to social media reporting—fully automated reports + Social Strategist insight. </h1>
 							<hr />
 							<!-- Text -->
 							<section>
 								<h2 id="WHATSQUIDBIRD">WHAT IS SQUIDBIRD?</h2>
 								<p style="text-align: left; font-weight: 400; margin-bottom: 0;">Squidbird offers automated social media performance reports, built by Social Analytics experts, with sliding scale pricing. We prioritize working with nonprofits and for-profit companies committed to social good.</p>
-								<span class="image main" style="display: block; text-align: center;">
-									<img src="images/whatissquidbird.jpg" alt="" style="width: 50vw; height: auto;" />
-								</span>
-								<p><b>THE PLATFORM</b></p>
-								<ul>
+								<p style="margin-top: 1.2em;"><a href="#contact" class="btn-gradient">Reach out to get a free first month report for your social handles</a></p>
+								<p class="eyebrow eyebrow-blue"><b>THE PLATFORM</b></p>
+								<ul class="list-blue">
 									<li>Aggregates post-level data from any X, TikTok, or Instagram account (except those listed as private)</li>
 									<li>Automatically calculates engagement and impressions totals and averages for time period</li>
 									<li>Exports all available metadata (including hard-to-find metrics like Instagram stories metrics and non-owned post impressions) in CSV format for further analysis</li>
@@ -220,8 +325,8 @@
 								<span class="image main full-bleed">
 									<img src="images/sb_platform.jpg" alt="" />
 								</span>
-								<p><b>THE SERVICE</b></p>
-								<ul>
+								<p class="eyebrow eyebrow-purple"><b>THE SERVICE</b></p>
+								<ul class="list-purple">
 									<li>13 years of experience in social media—though analytics is my specialty, I have deep experience in social strategy, content curation, creative technology solutions, & social research</li>
 									<li>Led social media strategy for dozens of Fortune 500 brands, including: lululemon, Gatorade, Red Bull, Google Security, Taco Bell, Target, Venmo, & Microsoft</li>
 									<li>Acts as a full-service social media strategy team, covering social playbooks, reporting, ad optimization, A/B testing, & my secret weapon—custom automation of repeated processes like research & reporting via AI</li>
@@ -229,14 +334,16 @@
 								<hr />
 								<h2 id="WHYSQUIDBIRD">WHY SQUIDBIRD?</h2>
 								<p><b>Squidbird saves money while enhancing statistical rigor and data transparency.</b></p>
-								<ul>
+								<ul class="list-teal">
 									<li>Squidbird passes the costs saved by using AI for preliminary analysis off to the buyer, unlike agencies, which keep the profit for themselves.</li>
 									<li>The <b>platform</b> (automated reports) is ideal for customers that already have a social agency in place, but want to measure the agency's creative performance with low-cost, unbiased reporting. <i>Never let an agency report on their own creative content—when agencies measure themselves, there is usually internal pressure to present findings in a way that benefits the agency, even when KPIs are in decline.</i></li>
 									<li>The <b>service</b> is ideal for customers that need both reporting + an expert Social Strategist to guide decision-making or create a playbook.</li>
 								</ul>
 								<hr />
-								<h1>Reporting starts at $200 per month. Email <a href="mailto:Justine@Squidbird.io">Justine@Squidbird.io</a> for a free first month report.</h1>
-								<p style="font-size: 0.75em; color: #888; margin-top: -1em;">*Please include your name, company name, and TikTok, Instagram, and X handles.</p>
+								<div class="pricing-banner">
+									<h1>Reporting starts at $200 per month. Email <a href="mailto:Justine@Squidbird.io">Justine@Squidbird.io</a> for a free first month report.</h1>
+									<p style="font-size: 0.75em; color: #888; margin-top: -1em; margin-bottom: 0;">*Please include your name, company name, and TikTok, Instagram, and X handles.</p>
+								</div>
 								<hr />
 							</section>
 						</div>
@@ -246,6 +353,8 @@
 						<div class="inner">
 							<section>
 								<h2 id="contact">Get in touch</h2>
+								<p>Include a brief description of your brand + any social handles you'd like analyzed in your free monthly report in the message section below.</p>
+								<p style="font-size: 0.75em; color: #888;">Your first month's report covers a full month of content&mdash;you're welcome to specify a date range in your message, or we'll default to the most recent full month if none is provided. The report includes optimization recommendations you can put into action right away: optimal posting times based on your audience, the keywords driving the most post engagement, whether your content mix (photo, video, static, etc.) is yielding optimal impressions and whether you should increase or decrease the share of a particular post type, and who you should follow and interact with to build your community.</p>
 								<form method="post" action="https://formspree.io/f/xdallvnk">
 									<div class="fields">
 										<div class="field half">
