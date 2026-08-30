@@ -203,6 +203,58 @@ ul.brand-strip li {
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(199, 91, 155, 0.45);
 }
+.pink-link, .pink-link:visited {
+  color: #f2849e !important;
+}
+.pink-link:hover {
+  color: #c75b9b !important;
+}
+/* Tighten the gap between the pricing section and the footer */
+#main {
+  padding-bottom: 1.5em;
+}
+#footer {
+  padding-top: 1.5em;
+}
+/* Dividers span the full browser width, not just the centered column */
+#main hr {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+/* ===== Expand/collapse section headers ===== */
+.accordion-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  user-select: none;
+}
+.accordion-toggle .toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.65em;
+  height: 0.65em;
+  font-size: 0.6em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.accordion-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(45deg);
+}
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.accordion-panel.is-open {
+  max-height: 6000px;
+}
 </style>
 </head>
 	<body class="is-preload">
@@ -253,7 +305,8 @@ ul.brand-strip li {
 							<hr />
 							<!-- Text -->
 							<section>
-								<h2 id="WHATSQUIDBIRD">WHAT IS SQUIDBIRD?</h2>
+								<h2 id="WHATSQUIDBIRD" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-what">WHAT IS SQUIDBIRD?<span class="toggle-icon" aria-hidden="true">+</span></h2>
+								<div class="accordion-panel" id="panel-what">
 								<p style="text-align: left; font-weight: 400; margin-bottom: 0;">Squidbird offers automated social media performance reports, built by Social Analytics experts, with sliding scale pricing. We prioritize working with nonprofits and for-profit companies committed to social good.</p>
 								<p style="margin-top: 1.2em;"><a href="#contact" class="btn-gradient">Reach out to get a free first month report for your social handles</a></p>
 								<p><b>THE PLATFORM</b></p>
@@ -285,8 +338,10 @@ ul.brand-strip li {
 									<li>Microsoft</li>
 								</ul>
 								<p>Beyond reporting, I also act as a full-service social media strategy team—covering social playbooks, ad optimization, & A/B testing, with my secret weapon being custom automation of repeated processes like research & reporting via AI.</p>
+								</div>
 								<hr />
-								<h2 id="WHYSQUIDBIRD">WHY SQUIDBIRD?</h2>
+								<h2 id="WHYSQUIDBIRD" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-why">WHY SQUIDBIRD?<span class="toggle-icon" aria-hidden="true">+</span></h2>
+								<div class="accordion-panel" id="panel-why">
 								<p><b>Squidbird saves money while enhancing statistical rigor and data transparency.</b></p>
 								<ul>
 									<li>Squidbird is ideal for brands who are already creating social content, but unsure how to grow followers or increase impressions.</li>
@@ -294,8 +349,9 @@ ul.brand-strip li {
 									<li>The <b>platform</b> (automated reports) is ideal for customers that already have a social agency in place, but want to measure the agency's creative performance with low-cost, unbiased reporting.</li>
 									<li>The <b>service</b> is ideal for customers that need both reporting + an expert Social Strategist to guide decision-making or create a playbook.</li>
 								</ul>
+								</div>
 								<hr />
-								<h1>Reporting starts at $200 per month. Email <a href="mailto:Justine@Squidbird.io">Justine@Squidbird.io</a> for a free first month report.</h1>
+								<h1>Reporting starts at $200 per month. Email <a href="mailto:Justine@Squidbird.io" class="pink-link">Justine@Squidbird.io</a> for a free first month report.</h1>
 								<p style="font-size: 0.75em; color: #888; margin-top: -1em;">*Please include your name, company name, and TikTok, Instagram, and X handles.</p>
 								<hr />
 							</section>
@@ -305,7 +361,8 @@ ul.brand-strip li {
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2 id="contact">Get in touch</h2>
+								<h2 id="contact" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-contact">Get in touch<span class="toggle-icon" aria-hidden="true">+</span></h2>
+								<div class="accordion-panel" id="panel-contact">
 								<p>Include a brief description of your brand + any social handles you'd like analyzed in your free monthly report in the message section below.</p>
 								<p style="font-size: 0.75em; color: #888;">Your first month's report covers a full month of content&mdash;you're welcome to specify a date range in your message, or we'll default to the most recent full month if none is provided. The report includes optimization recommendations you can put into action right away: optimal posting times based on your audience, the keywords driving the most post engagement, whether your content mix (photo, video, static, etc.) is yielding optimal impressions and whether you should increase or decrease the share of a particular post type, and who you should follow and interact with to build your community.</p>
 								<form method="post" action="https://formspree.io/f/xdallvnk">
@@ -324,6 +381,7 @@ ul.brand-strip li {
 										<li><input type="submit" value="Send" class="primary" /></li>
 									</ul>
 								</form>
+								</div>
 							</section>
 							<section>
 								<h2>Contact</h2>
@@ -372,6 +430,38 @@ ul.brand-strip li {
 			// Close modal if clicking outside the box
 			document.getElementById('login-modal').addEventListener('click', function(e) {
 				if (e.target === this) closeLogin();
+			});
+
+			// Expand/collapse section headers (WHAT IS SQUIDBIRD, WHY SQUIDBIRD, Get in touch)
+			var accordionHeaders = document.querySelectorAll('.accordion-toggle');
+			accordionHeaders.forEach(function(header) {
+				var panel = document.getElementById(header.getAttribute('aria-controls'));
+				if (!panel) return;
+				header.setOpen = function(open) {
+					header.setAttribute('aria-expanded', open ? 'true' : 'false');
+					panel.classList.toggle('is-open', open);
+				};
+				header.addEventListener('click', function() {
+					header.setOpen(header.getAttribute('aria-expanded') !== 'true');
+				});
+				header.addEventListener('keydown', function(e) {
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault();
+						header.click();
+					}
+				});
+			});
+			function openAccordionFor(hash) {
+				if (!hash) return;
+				var header = document.getElementById(hash.replace('#', ''));
+				if (header && header.setOpen) header.setOpen(true);
+			}
+			// Open the right section automatically if the page loads on/jumps to its anchor
+			openAccordionFor(window.location.hash);
+			document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+				link.addEventListener('click', function() {
+					openAccordionFor(link.getAttribute('href'));
+				});
 			});
 		</script>
 	</body>
