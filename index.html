@@ -209,6 +209,15 @@ ul.brand-strip li {
 .pink-link:hover {
   color: #c75b9b !important;
 }
+.pricing-heading {
+  font-size: 2.3em;
+}
+@media screen and (max-width: 736px) {
+  .pricing-heading { font-size: 1.7em; }
+}
+@media screen and (max-width: 360px) {
+  .pricing-heading { font-size: 1.5em; }
+}
 /* Tighten the gap between the pricing section and the footer */
 #main {
   padding-bottom: 1.5em;
@@ -232,14 +241,9 @@ ul.brand-strip li {
   user-select: none;
 }
 .accordion-toggle .toggle-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 0.65em;
-  height: 0.65em;
-  font-size: 0.6em;
-  border: 2px solid currentColor;
-  border-radius: 50%;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
   line-height: 1;
   flex-shrink: 0;
   transition: transform 0.2s ease;
@@ -301,11 +305,14 @@ ul.brand-strip li {
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>A low-cost alternative to social media reporting—fully automated reports + Social Strategist insight. </h1>
+							<h1>A low-cost solution to social media reporting—fully automated reports + Social Strategist insight. </h1>
+							<span class="image main full-bleed">
+								<img src="images/sb_platform.jpg" alt="" />
+							</span>
 							<hr />
 							<!-- Text -->
 							<section>
-								<h2 id="WHATSQUIDBIRD" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-what">WHAT IS SQUIDBIRD?<span class="toggle-icon" aria-hidden="true">+</span></h2>
+								<h2 id="WHATSQUIDBIRD" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-what"><span class="toggle-icon" aria-hidden="true">+</span>WHAT IS SQUIDBIRD?</h2>
 								<div class="accordion-panel" id="panel-what">
 								<p style="text-align: left; font-weight: 400; margin-bottom: 0;">Squidbird offers automated social media performance reports, built by Social Analytics experts, with sliding scale pricing. We prioritize working with nonprofits and for-profit companies committed to social good.</p>
 								<p style="margin-top: 1.2em;"><a href="#contact" class="btn-gradient">Reach out to get a free first month report for your social handles</a></p>
@@ -315,9 +322,6 @@ ul.brand-strip li {
 									<li>Automatically calculates engagement and impressions totals and averages for time period</li>
 									<li>Exports all available metadata (including hard-to-find metrics like Instagram stories metrics and non-owned post impressions) in CSV format for further analysis</li>
 								</ul>
-								<span class="image main full-bleed">
-									<img src="images/sb_platform.jpg" alt="" />
-								</span>
 								<p><b>THE SERVICE</b></p>
 								<p>Every engagement starts with a <b>Standard Report</b>: full analytics on your own social accounts, covering optimal posting times based on your audience, the keywords driving the most post engagement, whether your content mix (photo, video, static, etc.) is yielding optimal impressions, and who you should follow and interact with to build your community.</p>
 								<p>Want more context? A <b>Custom Report</b> can also include:</p>
@@ -340,7 +344,7 @@ ul.brand-strip li {
 								<p>Beyond reporting, I also act as a full-service social media strategy team—covering social playbooks, ad optimization, & A/B testing, with my secret weapon being custom automation of repeated processes like research & reporting via AI.</p>
 								</div>
 								<hr />
-								<h2 id="WHYSQUIDBIRD" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-why">WHY SQUIDBIRD?<span class="toggle-icon" aria-hidden="true">+</span></h2>
+								<h2 id="WHYSQUIDBIRD" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-why"><span class="toggle-icon" aria-hidden="true">+</span>WHY SQUIDBIRD?</h2>
 								<div class="accordion-panel" id="panel-why">
 								<p><b>Squidbird saves money while enhancing statistical rigor and data transparency.</b></p>
 								<ul>
@@ -351,7 +355,7 @@ ul.brand-strip li {
 								</ul>
 								</div>
 								<hr />
-								<h1>Reporting starts at $200 per month. Email <a href="mailto:Justine@Squidbird.io" class="pink-link">Justine@Squidbird.io</a> for a free first month report.</h1>
+								<h1 class="pricing-heading">Reporting starts at $200 per month. Email <a href="mailto:Justine@Squidbird.io" class="pink-link">Justine@Squidbird.io</a> for a free first month report.</h1>
 								<p style="font-size: 0.75em; color: #888; margin-top: -1em;">*Please include your name, company name, and TikTok, Instagram, and X handles.</p>
 								<hr />
 							</section>
@@ -361,8 +365,7 @@ ul.brand-strip li {
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2 id="contact" class="accordion-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="panel-contact">Get in touch<span class="toggle-icon" aria-hidden="true">+</span></h2>
-								<div class="accordion-panel" id="panel-contact">
+								<h2 id="contact">Get in touch</h2>
 								<p>Include a brief description of your brand + any social handles you'd like analyzed in your free monthly report in the message section below.</p>
 								<p style="font-size: 0.75em; color: #888;">Your first month's report covers a full month of content&mdash;you're welcome to specify a date range in your message, or we'll default to the most recent full month if none is provided. The report includes optimization recommendations you can put into action right away: optimal posting times based on your audience, the keywords driving the most post engagement, whether your content mix (photo, video, static, etc.) is yielding optimal impressions and whether you should increase or decrease the share of a particular post type, and who you should follow and interact with to build your community.</p>
 								<form method="post" action="https://formspree.io/f/xdallvnk">
@@ -381,7 +384,6 @@ ul.brand-strip li {
 										<li><input type="submit" value="Send" class="primary" /></li>
 									</ul>
 								</form>
-								</div>
 							</section>
 							<section>
 								<h2>Contact</h2>
