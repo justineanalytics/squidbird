@@ -248,6 +248,52 @@
   .rthumb{all:unset;cursor:zoom-in;display:block;border-bottom:1.5px solid var(--ink)}
   .rthumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
   @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.slider{order:-1}header.hero{padding-top:28px}}
+  header.hero{padding:22px 0 40px}
+  .hero-top{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:end}
+  .hero h1{font-size:clamp(2rem,4vw,3.1rem)}
+  .hero-top .lede{margin:0 0 16px;font-size:1.05rem}
+  .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:22px}
+  .path{background:var(--card);border:1.5px solid var(--ink);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+  .pvis{display:block;height:200px;border-bottom:1.5px solid var(--ink);text-decoration:none;color:var(--ink);overflow:hidden;position:relative}
+  .pbody{padding:16px 18px 18px}
+  .pbody .who{color:var(--coral);font-size:.7rem}
+  .pbody h3{font-family:var(--serif);font-size:1.3rem;line-height:1.15;margin:4px 0 6px}
+  .pbody h3 a{text-decoration:none}
+  .pbody h3 a:hover{color:var(--coral)}
+  .pbody p:last-child{font-size:.93rem;color:var(--ink-soft)}
+  .pvis.bot{background:#eef3f1;padding:12px;display:flex;flex-direction:column;gap:7px}
+  .bot-head{display:flex;align-items:center;gap:7px;font-size:.8rem}
+  .bot-head span:last-child{color:var(--ink-soft);font-size:.72rem}
+  .bot-dot{width:10px;height:10px;border-radius:50%;background:#1f5c57}
+  .bubble{font-size:.78rem;line-height:1.35;padding:7px 10px;border-radius:12px;max-width:88%}
+  .bubble.me{align-self:flex-end;background:#1f5c57;color:#fff;border-bottom-right-radius:3px}
+  .bubble.ai{background:#fff;border:1px solid #cfdcd8;border-bottom-left-radius:3px}
+  .bubble .srcs{display:block;margin-top:4px;font-size:.66rem;color:#5b6360}
+  .bot-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+  .bot-meta span,.chips span{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--ink);border-radius:999px;padding:2px 7px;background:var(--card)}
+  .pvis.ga{background:#1d2340;color:var(--paper);padding:14px;display:flex;flex-direction:column;gap:8px}
+  .ga-head{display:flex;justify-content:space-between;align-items:baseline;font-size:.85rem}
+  .ga-head span{color:#c9cbe0;font-size:.62rem}
+  .pvis.ga svg{width:100%;height:90px;background:rgba(255,255,255,.04);border-radius:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+  .chips span{background:transparent;border-color:rgba(246,241,231,.6);color:var(--paper)}
+  .pvis.slider{padding:10px 10px 6px;background:var(--paper-2);border-radius:0;box-shadow:none;border:0;border-bottom:1.5px solid var(--ink)}
+  .slider.pages{display:block}
+  .track-s{position:relative}
+  .slide{display:none;margin:0}
+  .slide.on{display:block;animation:fade .45s ease}
+  @keyframes fade{from{opacity:.2}to{opacity:1}}
+  .slider .slide button{all:unset;cursor:zoom-in;display:block;width:100%}
+  .slider .slide button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+  .slide img{display:block;width:100%;height:118px;object-fit:contain;background:#fff;border:1.5px solid var(--ink);border-radius:8px;user-select:none;-webkit-user-drag:none}
+  .slide figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:4px;text-align:center}
+  .sctl{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+  .slider .arrow{display:grid;place-items:center;font:inherit;font-size:.9rem;background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;width:26px;height:26px;cursor:pointer;padding:0}
+  .slider .arrow:hover{background:var(--gold)}
+  .dots{display:flex;gap:5px}
+  .slider .dot{display:inline-block;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;padding:0;cursor:pointer}
+  .slider .dot.on{background:var(--coral)}
+  @media (max-width:960px){.paths{grid-template-columns:1fr}.hero-top{grid-template-columns:1fr;gap:10px}}
 </style>
 </head>
 <body>
@@ -271,42 +317,53 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="mono kicker">Marketing analytics &amp; automation · Chicago</p>
-      <h1>Know what's working, why, and <em>what to do next</em>.</h1>
-      <p class="lede">Squidbird is me, Justine Braun: a marketing data analyst with 15 years of turning social, search, and audience data into strategy for Fortune 500 brands. Now I help startups and mission-driven teams automate the busywork, track what their marketing is doing, and plan what comes next.</p>
-      <div class="ctas">
-        <a class="btn" href="#social">See sample reports</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
-      </div>
-    </div>
-    <div class="slider pages" id="slider" aria-roledescription="carousel" aria-label="Examples from past reports">
-      <div class="track-s">
-        <figure class="slide on" data-i="0"><button type="button" data-src="images/squidbird-gallery/slide-query.jpg" data-cap="Custom social listening: One query, many answers: share of voice, brand perception and topic trends from a single social listening query." aria-label="Enlarge: Custom social listening"><img src="images/squidbird-gallery/slide-query.jpg" alt="Custom social listening example slide" draggable="false"></button><figcaption><b>Custom social listening</b><span>One query, many answers: share of voice, brand perception and topic trends from a single social listening query.</span></figcaption></figure>
-        <figure class="slide" data-i="1"><button type="button" data-src="images/squidbird-gallery/slide-content-impact.jpg" data-cap="Content performance: Which posts beat each channel’s engagement average, and by how much." aria-label="Enlarge: Content performance"><img src="images/squidbird-gallery/slide-content-impact.jpg" alt="Content performance example slide" draggable="false" loading="lazy"></button><figcaption><b>Content performance</b><span>Which posts beat each channel’s engagement average, and by how much.</span></figcaption></figure>
-        <figure class="slide" data-i="2"><button type="button" data-src="images/squidbird-gallery/slide-franchise-treemap.jpg" data-cap="Content series analysis: Every content series compared by post volume and engagement in one view." aria-label="Enlarge: Content series analysis"><img src="images/squidbird-gallery/slide-franchise-treemap.jpg" alt="Content series analysis example slide" draggable="false" loading="lazy"></button><figcaption><b>Content series analysis</b><span>Every content series compared by post volume and engagement in one view.</span></figcaption></figure>
-        <figure class="slide" data-i="3"><button type="button" data-src="images/squidbird-gallery/slide-topics-share.jpg" data-cap="Competitive share of voice: Which brands own the conversation in each product category." aria-label="Enlarge: Competitive share of voice"><img src="images/squidbird-gallery/slide-topics-share.jpg" alt="Competitive share of voice example slide" draggable="false" loading="lazy"></button><figcaption><b>Competitive share of voice</b><span>Which brands own the conversation in each product category.</span></figcaption></figure>
-        <figure class="slide" data-i="4"><button type="button" data-src="images/squidbird-gallery/slide-adjective-tagging.jpg" data-cap="Perception tagging: How people describe a category over time, tagged by the words they use." aria-label="Enlarge: Perception tagging"><img src="images/squidbird-gallery/slide-adjective-tagging.jpg" alt="Perception tagging example slide" draggable="false" loading="lazy"></button><figcaption><b>Perception tagging</b><span>How people describe a category over time, tagged by the words they use.</span></figcaption></figure>
-        <figure class="slide" data-i="5"><button type="button" data-src="images/squidbird-gallery/slide-topic-volume.jpg" data-cap="Topic tracking: What a market is talking about, and what’s rising or falling." aria-label="Enlarge: Topic tracking"><img src="images/squidbird-gallery/slide-topic-volume.jpg" alt="Topic tracking example slide" draggable="false" loading="lazy"></button><figcaption><b>Topic tracking</b><span>What a market is talking about, and what’s rising or falling.</span></figcaption></figure>
-        <figure class="slide" data-i="6"><button type="button" data-src="images/squidbird-gallery/slide-virality-map.jpg" data-cap="Virality mapping: How one newspaper story spread to news sites, blogs and Twitter over three days." aria-label="Enlarge: Virality mapping"><img src="images/squidbird-gallery/slide-virality-map.jpg" alt="Virality mapping example slide" draggable="false" loading="lazy"></button><figcaption><b>Virality mapping</b><span>How one newspaper story spread to news sites, blogs and Twitter over three days.</span></figcaption></figure>
-        <figure class="slide" data-i="7"><button type="button" data-src="images/squidbird-gallery/slide-polarization.jpg" data-cap="Network analysis: How Republicans and Democrats interacted on Twitter around the 2016 election, Brexit and Pokémon Go." aria-label="Enlarge: Network analysis"><img src="images/squidbird-gallery/slide-polarization.jpg" alt="Network analysis example slide" draggable="false" loading="lazy"></button><figcaption><b>Network analysis</b><span>How Republicans and Democrats interacted on Twitter around the 2016 election, Brexit and Pokémon Go.</span></figcaption></figure>
-        <figure class="slide" data-i="8"><button type="button" data-src="images/squidbird-gallery/slide-opposing-hashtags.jpg" data-cap="Hashtag research: How often a hashtag movement is answered by an alternative-viewpoint hashtag on its peak day." aria-label="Enlarge: Hashtag research"><img src="images/squidbird-gallery/slide-opposing-hashtags.jpg" alt="Hashtag research example slide" draggable="false" loading="lazy"></button><figcaption><b>Hashtag research</b><span>How often a hashtag movement is answered by an alternative-viewpoint hashtag on its peak day.</span></figcaption></figure>
-        <figure class="slide" data-i="9"><button type="button" data-src="images/squidbird-gallery/slide-jesuischarlie.jpg" data-cap="Search & social trends: How #JeSuisCharlie tweets surged ahead of Google searches." aria-label="Enlarge: Search & social trends"><img src="images/squidbird-gallery/slide-jesuischarlie.jpg" alt="Search & social trends example slide" draggable="false" loading="lazy"></button><figcaption><b>Search & social trends</b><span>How #JeSuisCharlie tweets surged ahead of Google searches.</span></figcaption></figure>
-      </div>
-      <div class="sctl">
-        <button type="button" class="arrow" id="sPrev" aria-label="Previous slide">←</button>
-        <div class="dots"><button type="button" class="dot on" aria-label="Show slide 1" data-go="0"></button><button type="button" class="dot" aria-label="Show slide 2" data-go="1"></button><button type="button" class="dot" aria-label="Show slide 3" data-go="2"></button><button type="button" class="dot" aria-label="Show slide 4" data-go="3"></button><button type="button" class="dot" aria-label="Show slide 5" data-go="4"></button><button type="button" class="dot" aria-label="Show slide 6" data-go="5"></button><button type="button" class="dot" aria-label="Show slide 7" data-go="6"></button><button type="button" class="dot" aria-label="Show slide 8" data-go="7"></button><button type="button" class="dot" aria-label="Show slide 9" data-go="8"></button><button type="button" class="dot" aria-label="Show slide 10" data-go="9"></button></div>
-        <button type="button" class="arrow" id="sNext" aria-label="Next slide">→</button>
-      </div>
-      <p class="mono snote">Examples from past reports · client figures removed</p>
-    </div>
-  </div>
   <div class="wrap">
-    <div class="practices">
-      <a class="practice" href="#automations"><span class="tag draw">01</span><b>AI &amp; operational automations</b><span>AI assistants, agents, and trackers that do the repetitive work for your team.</span></a>
-      <a class="practice" href="#analytics"><span class="tag build">02</span><b>Google Analytics &amp; Ads</b><span>Tracking you can trust, smarter campaigns, and reports that explain them.</span></a>
-      <a class="practice" href="#social"><span class="tag dive">03</span><b>Social media strategy &amp; reporting</b><span>Audits, playbooks, and monthly reports for every social channel.</span></a>
+    <div class="hero-top">
+      <div>
+        <p class="mono kicker">Marketing analytics &amp; automation · Chicago</p>
+        <h1>Know what's working, <span class="u">why</span>, and <em>what to do next</em>.</h1>
+      </div>
+      <div>
+        <p class="lede">I'm Justine Braun: 15 years turning social, search, and audience data into strategy for Fortune 500 brands. Now I help startups, small businesses, and nonprofits do the same, and automate the busywork around it.</p>
+        <div class="ctas"><a class="btn" href="#contact">Get in touch</a><a class="btn ghost" href="#social">See sample reports</a></div>
+      </div>
+    </div>
+    <div class="paths">
+      <article class="path">
+        <a class="pvis bot" href="#automations" aria-label="AI and operational automations">
+          <div class="bot-head"><span class="bot-dot"></span><b>LumityBot</b><span>your team's files, on call</span></div>
+          <div class="bubble me">Can we use grant funds for food at a graduation celebration?</div>
+          <div class="bubble ai">Usually not with federal funds. Entertainment costs are unallowable, so use unrestricted funds.<span class="srcs">Source: Financial Policies Manual</span></div>
+        </a>
+        <div class="pbody">
+          <p class="mono who">For nonprofit leaders &amp; small teams</p>
+          <h3><a href="#automations">AI &amp; operational automations</a></h3>
+          <p>Want AI to save your team hours but don't know where to start? I'll build it for you: a document finder for your team's files, an intake agent, or trackers that fill themselves in.</p>
+        </div>
+      </article>
+      <article class="path">
+        <a class="pvis ga" href="#analytics" aria-label="Google Analytics and Ads">
+          <div class="ga-head"><b>Traffic &amp; conversions</b><span class="mono">last 90 days</span></div>
+          <svg viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 L30 64 L60 66 L90 52 L120 56 L150 40 L180 44 L210 30 L240 34 L270 18 L300 22" fill="none" stroke="#2a8c82" stroke-width="3"/><path d="M0 80 L30 78 L60 77 L90 72 L120 74 L150 66 L180 67 L210 60 L240 61 L270 52 L300 54" fill="none" stroke="#e8604c" stroke-width="3" stroke-dasharray="5 4"/></svg>
+          <div class="chips"><span>Google Tag Manager</span><span>GA4</span><span>Google Ads</span><span>Microsoft Clarity</span><span>ChatGPT ads</span></div>
+        </a>
+        <div class="pbody">
+          <p class="mono who">For small businesses &amp; startups</p>
+          <h3><a href="#analytics">Google Analytics &amp; Ads</a></h3>
+          <p>Don't want to post every day, but want people to find you? I set up Tag Manager and GA4, run Google Ads (including nonprofit Ad Grants), and use tools like Microsoft Clarity to show what visitors actually do.</p>
+        </div>
+      </article>
+      <article class="path">
+        <div class="pvis slider pages" id="slider" aria-roledescription="carousel" aria-label="Examples from past reports">
+          <div class="track-s"><figure class="slide on"><button type="button" data-src="images/squidbird-gallery/slide-adjective-tagging.jpg" data-cap="AI perception tagging" aria-label="Enlarge: AI perception tagging"><img src="images/squidbird-gallery/slide-adjective-tagging.jpg" alt="AI perception tagging example" draggable="false"></button><figcaption>AI perception tagging</figcaption></figure><figure class="slide"><button type="button" data-src="images/squidbird-gallery/slide-topic-volume.jpg" data-cap="AI topic tracking" aria-label="Enlarge: AI topic tracking"><img src="images/squidbird-gallery/slide-topic-volume.jpg" alt="AI topic tracking example" draggable="false" loading="lazy"></button><figcaption>AI topic tracking</figcaption></figure><figure class="slide"><button type="button" data-src="images/squidbird-gallery/slide-polarization.jpg" data-cap="Network analysis" aria-label="Enlarge: Network analysis"><img src="images/squidbird-gallery/slide-polarization.jpg" alt="Network analysis example" draggable="false" loading="lazy"></button><figcaption>Network analysis</figcaption></figure><figure class="slide"><button type="button" data-src="images/squidbird-gallery/slide-query.jpg" data-cap="Custom social listening" aria-label="Enlarge: Custom social listening"><img src="images/squidbird-gallery/slide-query.jpg" alt="Custom social listening example" draggable="false" loading="lazy"></button><figcaption>Custom social listening</figcaption></figure><figure class="slide"><button type="button" data-src="images/squidbird-gallery/slide-opposing-hashtags.jpg" data-cap="Hashtag research" aria-label="Enlarge: Hashtag research"><img src="images/squidbird-gallery/slide-opposing-hashtags.jpg" alt="Hashtag research example" draggable="false" loading="lazy"></button><figcaption>Hashtag research</figcaption></figure></div>
+          <div class="sctl"><button type="button" class="arrow" id="sPrev" aria-label="Previous example">←</button><div class="dots"><button type="button" class="dot on" aria-label="Show example 1" data-go="0"></button><button type="button" class="dot" aria-label="Show example 2" data-go="1"></button><button type="button" class="dot" aria-label="Show example 3" data-go="2"></button><button type="button" class="dot" aria-label="Show example 4" data-go="3"></button><button type="button" class="dot" aria-label="Show example 5" data-go="4"></button></div><button type="button" class="arrow" id="sNext" aria-label="Next example">→</button></div>
+        </div>
+        <div class="pbody">
+          <p class="mono who">For founders launching something new</p>
+          <h3><a href="#social">Social media strategy &amp; reporting</a></h3>
+          <p>Need a go-to-market plan, or just an hour with someone who'll pressure-test your ideas and tell you what to do next? Research audits, social playbooks, and reports that explain the numbers.</p>
+        </div>
+      </article>
     </div>
   </div>
 </header>
@@ -364,10 +421,10 @@
   <div class="wrap">
     <p class="mono kicker" style="color:var(--gold)">02 · Google Analytics &amp; Ads strategy &amp; reporting</p>
     <h2>Traffic you can trust, ads that earn their spend.</h2>
-    <p class="sub">Most teams have Google Analytics and Google Ads running. Far fewer can say what either one is actually doing for them. I set up the tracking, run the campaigns, and report on what's working.</p>
+    <p class="sub">Most teams have Google Analytics and Google Ads running (or an equivalent like Microsoft Clarity or Microsoft Ads). Far fewer can say what either one is actually doing for them. I set up the tracking, run the campaigns, and report on what's working.</p>
     <div class="steps">
-      <div class="t"><h3>Analytics setup &amp; audits</h3><p>GA4 configuration, events and conversions, UTM conventions, and a check that the numbers you rely on are real.</p></div>
-      <div class="t"><h3>Google Ads strategy</h3><p>Search campaigns, keyword research, ad copy, and bidding pointed at the conversions that matter most to you.</p></div>
+      <div class="t"><h3>Tracking setup &amp; audits</h3><p>Google Tag Manager and GA4 setup, events and conversions, UTM conventions, and Microsoft Clarity heatmaps and recordings to see how people actually use your site.</p></div>
+      <div class="t"><h3>Google Ads strategy</h3><p>Search campaigns, keyword research, ad copy, and bidding pointed at the conversions that matter most, plus tests on newer AI ad placements like ads in ChatGPT.</p></div>
       <div class="t"><h3>Google Ad Grants</h3><p>Nonprofit Ad Grant accounts managed in-house: staying compliant and optimizing toward real outcomes, not just clicks.</p></div>
       <div class="t"><h3>Reporting &amp; dashboards</h3><p>Monthly reports and live dashboards that connect site traffic and ad spend to what you're trying to achieve.</p></div>
     </div>
