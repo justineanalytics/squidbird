@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Squidbird — data, art & mischief for the public good</title>
-<meta name="description" content="Squidbird is a tiny Chicago studio that studies people, builds tools, and makes strange art with data — for brands and organizations that want a better world for everyone.">
+<title>Squidbird — marketing analytics &amp; automation</title>
+<meta name="description" content="Squidbird is the marketing data analysis practice of Justine Braun: social media strategy and reporting, Google Analytics and Ads, and operational automations for startups and mission-driven teams.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -152,6 +152,56 @@
   footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  /* ---------- additions: work previews ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+  .stat{border:1.5px solid var(--ink);border-radius:14px;padding:14px 16px;background:var(--card);box-shadow:3px 3px 0 var(--ink)}
+  .stat b{display:block;font-family:var(--serif);font-size:1.25rem;line-height:1.15}
+  .stat span{font-size:.88rem;color:var(--ink-soft)}
+  @media (max-width:860px){.stats{grid-template-columns:1fr 1fr}}
+  .hero-art img{width:100%;display:block;border-radius:10px;border:1.5px solid var(--ink)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:s}
+  .step{border:1.5px solid rgba(246,241,231,.5);border-radius:16px;padding:22px;background:rgba(255,255,255,.03)}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);color:var(--gold);font-size:.8rem;letter-spacing:.1em}
+  .step h3{font-family:var(--serif);font-size:1.35rem;margin:6px 0}
+  .step p{color:#d7d8ea;font-size:.96rem}
+  @media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+  @media (max-width:540px){.steps{grid-template-columns:1fr}}
+  .work{display:grid;gap:28px;margin-top:34px}
+  .report{background:var(--card);border:1.5px solid var(--ink);border-radius:18px;box-shadow:var(--shadow);padding:24px;display:grid;grid-template-columns:.9fr 1.4fr;gap:26px;align-items:start}
+  .report h3{font-family:var(--serif);font-size:1.6rem;line-height:1.15;margin:6px 0 8px}
+  .report p{color:var(--ink-soft);font-size:.98rem;margin-bottom:10px}
+  .report ul{list-style:none;margin-top:6px}
+  .report li{padding:6px 0;border-top:1px dashed var(--line-strong);font-size:.94rem}
+  .report li::before{content:"✳︎ ";color:var(--coral)}
+  .pages{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .pages button{all:unset;cursor:zoom-in;display:block;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--paper-2);transition:transform .15s}
+  .pages button:hover,.pages button:focus-visible{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+  .pages button:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+  .pages img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+  .note{margin-top:18px;font-size:.9rem;color:var(--ink-soft)}
+  @media (max-width:860px){.report{grid-template-columns:1fr}}
+  .lb{position:fixed;inset:0;background:rgba(29,35,64,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+  .lb.open{display:flex}
+  .lb figure{max-width:1100px;width:100%;color:var(--paper)}
+  .lb img{width:100%;display:block;border-radius:10px;border:1.5px solid var(--paper);user-select:none;-webkit-user-drag:none}
+  .lb figcaption{margin-top:10px;display:flex;justify-content:space-between;gap:10px;font-size:.92rem}
+  .lb .ctl{position:absolute;top:16px;right:16px;display:flex;gap:8px}
+  .lb .ctl button{font:inherit;font-family:var(--mono);font-size:.8rem;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:8px 14px;cursor:pointer}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+  @media (max-width:820px){.grid2{grid-template-columns:1fr}}
+  .practices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  .practice{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--card);border:1.5px solid var(--ink);border-radius:16px;padding:18px;box-shadow:var(--shadow);transition:transform .15s}
+  .practice:hover{transform:translate(-2px,-2px)}
+  .practice .tag{align-self:flex-start}
+  .practice b{font-family:var(--serif);font-size:1.25rem;line-height:1.2}
+  .practice span:last-child{font-size:.93rem;color:var(--ink-soft)}
+  @media (max-width:860px){.practices{grid-template-columns:1fr}}
+  .subhead{font-family:var(--serif);font-size:1.7rem;margin:48px 0 6px}
+  #analytics .t h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:6px}
+  #analytics .t p{color:#d7d8ea;font-size:.96rem}
+  .case{margin-top:28px;border:1.5px dashed rgba(246,241,231,.6);border-radius:16px;padding:20px;max-width:46em}
+  .case p:last-child{margin-top:6px;font-size:1.05rem}
+  .autos .card h3{font-size:1.5rem}
 </style>
 </head>
 <body>
@@ -160,16 +210,14 @@
 <nav>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Squidbird home">
-      <!-- Squidbird mark: a squid with one wing. Swap for images/logo.svg if you prefer the current logo. -->
-      <img class="sqlogo" src="images/logo.svg" alt="Squidbird logo" width="38" height="38" style="width:38px;height:38px;object-fit:contain">
+      <img class="sqlogo" src="images/logo.svg" alt="" width="38" height="38" style="width:38px;height:38px;object-fit:contain">
       Squidbird
     </a>
     <ul class="links">
-      <li><a href="#method">The method</a></li>
-      <li><a href="#experiments">Experiments</a></li>
-      <li><a href="#services">Hire me</a></li>
+      <li><a href="#social">Social</a></li>
+      <li><a href="#analytics">Analytics &amp; Ads</a></li>
+      <li><a href="#automations">Automations</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="https://justineanalytics.github.io/">Justine Braun ↗</a></li>
     </ul>
     <a class="btn" href="#contact">Say hi</a>
   </div>
@@ -177,307 +225,248 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="sticker">now with<br>100% more<br>skeleton</div>
   <div class="wrap hero-grid">
     <div>
-      <p class="mono kicker">A tiny data &amp; art studio in Chicago</p>
-      <h1>I study people, build tools, and make <em>weird art</em> with the data — <span class="u">for a better world</span>.</h1>
-      <p class="lede">Squidbird is me, Justine: a researcher, coder, and artist with 15 years of finding patterns in how people talk, search, and vote. Every experiment below is also a demo of something I can do for you.</p>
+      <p class="mono kicker">Marketing analytics &amp; automation · Chicago</p>
+      <h1>Know what's working, <em>why</em>, and <span class="u">what to do next</span>.</h1>
+      <p class="lede">Squidbird is me, Justine Braun: a marketing data analyst with 15 years of turning social, search, and audience data into strategy for Fortune 500 brands. Now I help startups and mission-driven teams measure their marketing and automate the busywork around it.</p>
       <div class="ctas">
-        <a class="btn" href="#experiments">See the experiments</a>
-        <a class="btn ghost" href="#services">What you can hire</a>
+        <a class="btn" href="#social">See sample reports</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
     </div>
-    <div class="hero-art" style="padding:12px;transform:rotate(1.5deg)">
-      <img src="images/art/dreamscape.jpg" alt="Justine's colored-pencil drawing of birds, hills and tiny buildings" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:10px">
-      <p class="mono" style="margin-top:10px;color:var(--ink-soft)">Original drawing by Justine</p>
+    <div class="hero-art" style="transform:rotate(1.5deg)">
+      <img src="images/squidbird-work/audit-features.jpg" alt="Preview of a competitive feature matrix from a Squidbird research audit" draggable="false" oncontextmenu="return false">
+      <p class="mono" style="margin-top:10px;color:var(--ink-soft)">From a Squidbird research audit</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="practices">
+      <a class="practice" href="#social"><span class="tag dive">01</span><b>Social media strategy &amp; reporting</b><span>Audits, playbooks, and monthly reports for every social channel.</span></a>
+      <a class="practice" href="#analytics"><span class="tag build">02</span><b>Google Analytics &amp; Ads</b><span>Tracking you can trust, smarter campaigns, and reports that explain them.</span></a>
+      <a class="practice" href="#automations"><span class="tag draw">03</span><b>Operational automations</b><span>AI assistants, agents, and trackers that do the repetitive work for your team.</span></a>
     </div>
   </div>
 </header>
 
-<!-- ============ METHOD / FRAMEWORK ============ -->
-<section class="method" id="method">
+<!-- ============ 01 SOCIAL ============ -->
+<section id="social" style="padding-top:24px">
   <div class="wrap">
-    <p class="mono kicker" style="color:var(--gold)">The Squidbird method</p>
-    <h2>Three tentacles and one big heart.</h2>
-    <p class="sub">A squid dives deep. A bird sees the whole pattern from above. Every project I take on, whether it's art or client work, uses some mix of these:</p>
-    <div class="tentacles">
-      <div class="t dive">
-        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="M15 15l6 6"/></svg></div>
-        <h3>Dive</h3>
-        <p>Study people. Research, social listening, interviews, and big messy datasets, until I understand why people do what they do.</p>
-        <p class="mono eg">research · analytics · AI</p>
-      </div>
-      <div class="t build">
-        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
-        <h3>Build</h3>
-        <p>Make the thing. Custom CRMs, automations, chatbots, data pipelines, and the little website a QR code points to.</p>
-        <p class="mono eg">code · automation · tools</p>
-      </div>
-      <div class="t draw">
-        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 20l4-1 11-11-3-3L5 16z"/></svg></div>
-        <h3>Draw</h3>
-        <p>Make it strange. Data art, film, pattern drawings, and stunts that get people to stop and actually feel the numbers.</p>
-        <p class="mono eg">art · film · campaigns</p>
-      </div>
-      <div class="t heart">
-        <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1d2340"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-3 4.5 4.5 0 018 3c0 6-8 11-8 11z"/></svg></div>
-        <h3>For everyone</h3>
-        <p>The point of all of it. Work aimed at fairness: racism, sexism, homophobia, inequality, and who gets watched and who gets heard.</p>
-        <p class="mono eg">ethics · consent · equity</p>
-      </div>
-    </div>
-    <p class="formula">curiosity <b>+</b> code <b>+</b> a little bit of nonsense <b>=</b> work people remember</p>
-  </div>
-</section>
-
-<!-- ============ EXPERIMENTS ============ -->
-<section id="experiments">
-  <div class="wrap">
-    <p class="mono kicker">Proof, from the lab</p>
-    <h2>Art projects that double as proof.</h2>
-    <p class="sub">Squidbird client work, plus experiments from <a href="https://justineanalytics.github.io/">Justine Braun's research &amp; art practice</a>. Each one ends with the skill you can borrow for your brand or organization.</p>
-
-    <div class="filters" role="group" aria-label="Filter experiments">
-      <button class="chip" aria-pressed="true" data-f="all">All</button>
-      <button class="chip" aria-pressed="false" data-f="dive">Dive</button>
-      <button class="chip" aria-pressed="false" data-f="build">Build</button>
-      <button class="chip" aria-pressed="false" data-f="draw">Draw</button>
-    </div>
-
-    <div class="grid" id="grid">
-
-      <!-- 1. FEATURE: American Dream -->
-      <article class="card feature" data-t="dive build draw">
-        <div class="thumb" aria-hidden="true">
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" style="background:#efe7d6">
-            <rect width="400" height="300" fill="#efe7d6"/>
-            <rect x="40" y="210" width="320" height="70" fill="#e8604c" stroke="#1d2340" stroke-width="2"/>
-            <text x="200" y="252" text-anchor="middle" font-family="Fraunces,serif" font-size="19" font-weight="700" fill="#fff">IS THE AMERICAN DREAM DEAD?</text>
-            <g stroke="#1d2340" stroke-width="3" fill="#fffaf0" stroke-linecap="round">
-              <circle cx="200" cy="80" r="34"/>
-              <path d="M200 114v70M170 135h60M176 150h48M180 165h40M200 140l-40 40M200 140l40 40" fill="none"/>
-            </g>
-            <circle cx="188" cy="76" r="7" fill="#1d2340"/><circle cx="212" cy="76" r="7" fill="#1d2340"/>
-            <path d="M188 98h24" stroke="#1d2340" stroke-width="3"/>
-            <rect x="244" y="150" width="34" height="44" rx="3" fill="#2a8c82" stroke="#1d2340" stroke-width="2" transform="rotate(-12 260 172)"/>
-            <text x="262" y="70" font-family="DM Mono,monospace" font-size="13" fill="#1d2340">"is the dream</text>
-            <text x="262" y="88" font-family="DM Mono,monospace" font-size="13" fill="#1d2340">still alive?"</text>
-          </svg>
-        </div>
-        <div class="body">
-          <div class="meta"><span class="mono">Public art · Chicago · 2026</span><span class="mono status">In progress</span></div>
-          <h3>Is the American Dream Dead?</h3>
-          <p>In 1980, Studs Terkel interviewed 100 Americans about the American Dream. So I brought him back, sort of. A resurrected skeleton Terkel sits at a booth with Tuxedo, Vaiku AI's offline conversational speaker, and asks Chicagoans the same questions before the 2026 midterms. The goal is 100 new interviews.</p>
-          <p>Then I compare themes and keywords from Terkel's interviews with today's answers, by generation, and write it up as a comedic-journalism piece. Consent comes first. Only generation and themes get published unless someone opts in.</p>
-          <div class="tags"><span class="tag dive">Dive</span><span class="tag build">Build</span><span class="tag draw">Draw</span></div>
-          <div class="borrow"><b>Borrow this skill</b>Participatory research and conversational-AI data collection that people actually want to take part in, plus the analysis and the story at the end.</div>
-        </div>
-      </article>
-
-      <!-- 2. Vaiku / curly cord -->
-      <article class="card" data-t="build draw">
-        <div class="thumb" aria-hidden="true">
-          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="250" fill="#e3a72f"/>
-            <rect x="40" y="70" width="90" height="120" rx="14" fill="#1d2340"/>
-            <circle cx="85" cy="110" r="22" fill="#fffaf0"/>
-            <circle cx="85" cy="110" r="8" fill="#1d2340"/>
-            <rect x="60" y="150" width="50" height="10" rx="5" fill="#fffaf0"/>
-            <path d="M130 130 C150 100,160 160,175 130 S195 100,210 130 S230 160,245 130 S265 100,280 130 S300 160,315 130" fill="none" stroke="#e8604c" stroke-width="6" stroke-linecap="round"/>
-            <path d="M315 130 q25 0 30 -30 l20 -10 q12 -6 6 8 l-18 60 q-4 12 -14 4 l-6 -10 q-10 -20 -18 -22" fill="#e8604c" stroke="#1d2340" stroke-width="3"/>
-          </svg>
-        </div>
-        <div class="body">
-          <div class="meta"><span class="mono">Campaign · Vaiku AI · 2026</span><span class="mono status">In progress</span></div>
-          <h3>Hold the Line</h3>
-          <p>I'm doing marketing for Vaiku AI, and the skeleton was my first stunt. (Hauling a skeleton around is hard, and some serious Terkel fans might not love it.) Now we're leaning into Gen Z's love of analog, old-timey tech: Tuxedo gets a curly phone cord and a spot in public places, and anyone can pick up and give their answer to the Terkel experiment.</p>
-          <div class="tags"><span class="tag build">Build</span><span class="tag draw">Draw</span></div>
-          <div class="borrow"><b>Borrow this skill</b>Experiential and guerrilla launch campaigns for new products, built on what an audience already loves.</div>
-        </div>
-      </article>
-
-      <!-- 3. Siloing / 2016 -->
-      <article class="card" data-t="dive draw">
-        <div class="thumb" aria-hidden="true">
-          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="250" fill="#fffaf0"/>
-            <g stroke="#1d2340" stroke-width="2">
-              <rect x="50" y="60" width="70" height="150" fill="#e8604c"/>
-              <rect x="165" y="40" width="70" height="170" fill="#2a8c82"/>
-              <rect x="280" y="80" width="70" height="130" fill="#8a6fc2"/>
-              <path d="M50 60q35-30 70 0M165 40q35-30 70 0M280 80q35-30 70 0" fill="#fffaf0"/>
-            </g>
-            <g fill="#fffaf0"><circle cx="72" cy="120" r="4"/><circle cx="96" cy="150" r="4"/><circle cx="80" cy="180" r="4"/>
-            <circle cx="188" cy="100" r="4"/><circle cx="212" cy="140" r="4"/><circle cx="196" cy="180" r="4"/>
-            <circle cx="302" cy="130" r="4"/><circle cx="326" cy="165" r="4"/></g>
-            <line x1="30" y1="210" x2="370" y2="210" stroke="#1d2340" stroke-width="2"/>
-          </svg>
-        </div>
-        <div class="body">
-          <div class="meta"><span class="mono">Political research · ~2016</span><span class="mono status done">Archive</span></div>
-          <h3>Silo Season</h3>
-          <p>Around ten years ago I studied how social media was sorting voters into separate echo chambers that never overlapped. The siloing data pointed to a Trump win in his first election, and I called it.</p>
-          <div class="tags"><span class="tag dive">Dive</span><span class="tag draw">Draw</span></div>
-          <div class="borrow"><b>Borrow this skill</b>Audience and political research: mapping communities, spotting where they split, and making forecasts you can see.</div>
-        </div>
-      </article>
-
-      <!-- 4. Je suis Charlie -->
-      <article class="card" data-t="dive draw">
-        <div class="thumb" aria-hidden="true">
-          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="250" fill="#1d2340"/>
-            <text x="40" y="150" font-family="Fraunces,serif" font-size="130" font-weight="800" fill="#e3a72f">#</text>
-            <rect x="160" y="70" width="200" height="34" rx="17" fill="#fffaf0"/>
-            <circle cx="182" cy="87" r="8" fill="none" stroke="#1d2340" stroke-width="2.5"/><path d="M188 93l6 6" stroke="#1d2340" stroke-width="2.5"/>
-            <rect x="200" y="82" width="120" height="10" rx="5" fill="#c9cbe0"/>
-            <path d="M160 140 L200 125 L240 150 L280 110 L320 160 L360 100" fill="none" stroke="#e8604c" stroke-width="4"/>
-            <path d="M160 175 L200 172 L240 168 L280 140 L320 150 L360 120" fill="none" stroke="#2a8c82" stroke-width="4"/>
-          </svg>
-        </div>
-        <div class="body">
-          <div class="meta"><span class="mono">Infographic · 2015</span><span class="mono status done">Archive</span></div>
-          <h3>You Google What You Scroll</h3>
-          <p>An infographic showing that what people see on social media decides what they search for next. Using #JeSuisCharlie as the case study, it traced how hashtags started steering Google searches, and with them the news cycle.</p>
-          <div class="tags"><span class="tag dive">Dive</span><span class="tag draw">Draw</span></div>
-          <div class="borrow"><b>Borrow this skill</b>Search and social trend intelligence: knowing what your audience will look for before they look for it.</div>
-        </div>
-      </article>
-
-      <!-- 5. 48-hour film -->
-      <article class="card" data-t="draw">
-        <div class="thumb" aria-hidden="true">
-          <img src="images/art/surveillance-collage.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
-        </div>
-        <div class="body">
-          <div class="meta"><span class="mono">Short film · 48HFP Chicago · 2026</span><span class="mono status done">Done</span></div>
-          <h3><a href="https://youtu.be/_ZEfBbxXsQM" target="_blank" rel="noopener">We Are Here</a></h3>
-          <p>Made in 48 hours with my brother and Elliot. I play a woman who tells a new date about an illegal abortion she had in Texas, and then the paranoia sets in. It's about social and government surveillance and how being watched leaves us uncertain, anxious, and feeling like we've lost control.</p>
-          <div class="tags"><span class="tag draw">Draw</span></div>
-          <div class="borrow"><b>Borrow this skill</b>Storytelling on hard topics: scripts, short video, and messaging that treats sensitive subjects with care.</div>
-        </div>
-      </article>
-
-      <!-- 6. Pattern drawings -->
-      <article class="card" data-t="draw">
-        <div class="thumb" aria-hidden="true">
-          <img src="images/art/succulents.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
-        </div>
-        <div class="body">
-          <div class="meta"><span class="mono">Drawing &amp; painting · ongoing</span><span class="mono status">Always</span></div>
-          <h3>The Pattern Drawings</h3>
-          <p>Hand-drawn, obsessively repeating patterns that end up looking like architectural plans or math proofs. It's the same instinct that makes me good with data: I can't stop looking for the structure under things.</p>
-          <div class="tags"><span class="tag draw">Draw</span></div>
-          <div class="borrow"><b>Borrow this skill</b>Visual systems for data: chart styles, report design, and brand patterns that make dashboards feel like they belong to you.</div>
-        </div>
-      </article>
-
-      <!-- 7. Social Media Macroscope -->
-      <article class="card" data-t="dive build">
-        <div class="thumb" aria-hidden="true">
-          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="250" fill="#2a8c82"/>
-            <g stroke="#fffaf0" stroke-width="1.5" opacity=".7">
-              <line x1="80" y1="70" x2="180" y2="120"/><line x1="180" y1="120" x2="140" y2="200"/><line x1="180" y1="120" x2="280" y2="80"/>
-              <line x1="280" y1="80" x2="330" y2="170"/><line x1="180" y1="120" x2="260" y2="180"/><line x1="260" y1="180" x2="330" y2="170"/><line x1="80" y1="70" x2="140" y2="200"/>
-            </g>
-            <g fill="#fffaf0" stroke="#1d2340" stroke-width="2">
-              <circle cx="80" cy="70" r="10"/><circle cx="180" cy="120" r="16"/><circle cx="140" cy="200" r="9"/>
-              <circle cx="280" cy="80" r="12"/><circle cx="330" cy="170" r="10"/><circle cx="260" cy="180" r="8"/>
-            </g>
-            <circle cx="180" cy="120" r="40" fill="none" stroke="#e3a72f" stroke-width="4"/>
-            <line x1="208" y1="148" x2="235" y2="175" stroke="#e3a72f" stroke-width="6" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="body">
-          <div class="meta"><span class="mono">Research tool · University of Illinois</span><span class="mono status done">Archive</span></div>
-          <h3>The Social Media Macroscope</h3>
-          <p>I worked with Joe Yun on the University of Illinois' Social Media Macroscope, an open research platform for mining social data, and spoke about it at a conference there.</p>
-          <div class="tags"><span class="tag dive">Dive</span><span class="tag build">Build</span></div>
-          <div class="borrow"><b>Borrow this skill</b>Research-grade social and text analytics, done with academic rigor.</div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section id="services" style="padding-top:24px">
-  <div class="wrap">
-    <p class="mono kicker">Hire the squid</p>
-    <h2>Same brain, pointed at your problem.</h2>
-    <p class="sub">I work with brands, startups, and mission-driven organizations that want to understand people better, spend less time on busywork, and get noticed.</p>
+    <p class="mono kicker">01 · Social media strategy &amp; reporting</p>
+    <h2>Know what to post, where, and why.</h2>
+    <p class="sub">From a first look at your competitors to the monthly report that tells you what to do next.</p>
     <div class="services">
       <div class="svc">
-        <span class="tag dive">Dive</span>
-        <h3>Understand your people</h3>
-        <p>Find out what your audience thinks, says, and searches for.</p>
+        <h3>Research audits</h3>
+        <p>Where you stand, who you're up against, and where the white space is.</p>
         <ul>
-          <li>Social listening &amp; trend research</li>
-          <li>Audience &amp; political data mining</li>
-          <li>ROI of social</li>
-          <li>Surveys, interviews &amp; AI-assisted analysis</li>
+          <li>Competitive &amp; market analysis</li>
+          <li>Channel health &amp; audience demographics</li>
+          <li>Content, keyword &amp; hashtag analysis</li>
+          <li>Social listening &amp; Reddit research</li>
         </ul>
       </div>
       <div class="svc">
-        <span class="tag build">Build</span>
-        <h3>Build the tools</h3>
-        <p>Custom tools that do the boring parts for you.</p>
+        <h3>Social playbooks</h3>
+        <p>A plan your team can actually follow.</p>
         <ul>
-          <li>Custom CRMs &amp; data migrations</li>
-          <li>Marketing &amp; reporting automation</li>
-          <li>AI assistants &amp; chatbots</li>
-          <li>AI readiness &amp; data-ethics policies</li>
-        </ul>
-      </div>
-      <div class="svc">
-        <span class="tag draw">Draw</span>
-        <h3>Make it unforgettable</h3>
-        <p>Campaigns and stories people stop and look at.</p>
-        <ul>
+          <li>Brand positioning, voice &amp; messaging pillars</li>
+          <li>Audience personas &amp; A/B test design</li>
+          <li>Channel mix, cadence &amp; content calendars</li>
           <li>Organic launch strategy for new apps</li>
-          <li>Experiential &amp; guerrilla campaigns</li>
-          <li>Data visualization &amp; infographics</li>
-          <li>Short film &amp; storytelling</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Performance reporting</h3>
+        <p>Reports that explain the numbers, not just list them.</p>
+        <ul>
+          <li>Monthly &amp; lookback performance reports</li>
+          <li>Benchmarks, KPIs &amp; goal setting</li>
+          <li>Post-type, topic &amp; timing analysis</li>
+          <li>Automated reporting &amp; dashboards</li>
         </ul>
       </div>
     </div>
 
     <div class="past">
       <p class="mono" style="color:var(--ink-soft)">Before Squidbird, I led social analytics and reporting for brands including</p>
-      <p class="names">lululemon · Gatorade · Red Bull · Google Security · Taco Bell · Target · Venmo · Microsoft</p>
-      <p class="mono" style="color:var(--ink-soft);margin-top:12px">Recent Squidbird launches: Our Voices · iGolf Better</p>
+      <p class="names">Google Security · Airbnb · Microsoft · lululemon · Venmo · Gatorade · Red Bull · Taco Bell · Target</p>
+      <p style="margin-top:10px;font-size:.98rem">At VML, I led the agency's move from manual to automated social media reporting, and I was part of its award-winning five-person creative data team led by <a href="https://www.vml.com/people/jason-carmel" target="_blank" rel="noopener">Jason Carmel</a>.</p>
+      <p class="mono" style="color:var(--ink-soft);margin-top:12px">Recent Squidbird clients: Our Voices · iGolf Better · Vaiku AI</p>
+    </div>
+
+    <h3 class="subhead">A peek inside the reports</h3>
+    <p class="sub">Click any page to take a closer look. These are previews only: every figure has been removed, and full reports stay with the clients they were made for.</p>
+
+    <div class="work">
+      <article class="report">
+        <div>
+          <div class="meta"><span class="mono">Civic-tech app · Research audit</span></div>
+          <h3>Competitive &amp; market research audit</h3>
+          <p>A full audit for Our Voices, a civic-tech app launching on social, before it posted anything.</p>
+          <ul>
+            <li>Feature matrix across direct competitors to find a differentiator</li>
+            <li>Platform health, engagement and audience demographics by channel</li>
+            <li>Top content, term and hashtag analysis across every competitor</li>
+            <li>Reddit research on what voters praise, complain about and ask for</li>
+          </ul>
+        </div>
+        <div class="pages" data-set="Research audit">
+          <button data-src="images/squidbird-work/audit-cover.jpg" data-cap="Research audit · cover"><img src="images/squidbird-work/audit-cover-thumb.jpg" alt="Research audit cover" draggable="false"></button>
+          <button data-src="images/squidbird-work/audit-features.jpg" data-cap="Research audit · feature matrix of direct competitors"><img src="images/squidbird-work/audit-features-thumb.jpg" alt="Competitor feature matrix" draggable="false"></button>
+          <button data-src="images/squidbird-work/audit-terms.jpg" data-cap="Research audit · cross-platform term &amp; hashtag analysis"><img src="images/squidbird-work/audit-terms-thumb.jpg" alt="Term and hashtag analysis" draggable="false"></button>
+          <button data-src="images/squidbird-work/audit-channels.jpg" data-cap="Research audit · engagement rate by platform"><img src="images/squidbird-work/audit-channels-thumb.jpg" alt="Engagement rate by platform chart" draggable="false"></button>
+        </div>
+      </article>
+
+      <article class="report">
+        <div>
+          <div class="meta"><span class="mono">Civic-tech app · Strategy</span></div>
+          <h3>Social playbook &amp; content strategy</h3>
+          <p>The follow-up to the audit: everything the team needed to launch and grow on social, phase by phase.</p>
+          <ul>
+            <li>Brand positioning, voice and tone, and messaging pillars</li>
+            <li>Audience personas and an A/B testing plan</li>
+            <li>A phased platform mix, cadence and content calendar</li>
+            <li>A step-by-step guide for a social media manager, plus measurement</li>
+          </ul>
+        </div>
+        <div class="pages" data-set="Social playbook">
+          <button data-src="images/squidbird-work/playbook-cover.jpg" data-cap="Social playbook · cover"><img src="images/squidbird-work/playbook-cover-thumb.jpg" alt="Social playbook cover" draggable="false"></button>
+          <button data-src="images/squidbird-work/playbook-voice.jpg" data-cap="Social playbook · brand voice attributes"><img src="images/squidbird-work/playbook-voice-thumb.jpg" alt="Brand voice attributes table" draggable="false"></button>
+          <button data-src="images/squidbird-work/playbook-personas.jpg" data-cap="Social playbook · personas for A/B testing"><img src="images/squidbird-work/playbook-personas-thumb.jpg" alt="Personas for A/B testing" draggable="false"></button>
+          <button data-src="images/squidbird-work/playbook-rollout.jpg" data-cap="Social playbook · phased platform mix"><img src="images/squidbird-work/playbook-rollout-thumb.jpg" alt="Phased platform mix" draggable="false"></button>
+        </div>
+      </article>
+
+      <article class="report">
+        <div>
+          <div class="meta"><span class="mono">Nonprofit · Performance report</span></div>
+          <h3>Instagram performance report</h3>
+          <p>A multi-year look at a nonprofit's Instagram, built from an API export, to explain why engagement rose and fell and what to do about it.</p>
+          <ul>
+            <li>Post volume vs. engagement over time</li>
+            <li>What the top and bottom posts had in common</li>
+            <li>Post type, keyword and day-of-week segmentation</li>
+            <li>"Do more / do less" optimizations</li>
+          </ul>
+        </div>
+        <div class="pages" data-set="Performance report">
+          <button data-src="images/squidbird-work/performance-trend.jpg" data-cap="Performance report · volume and engagement over time"><img src="images/squidbird-work/performance-trend-thumb.jpg" alt="Post volume and engagement trend chart" draggable="false"></button>
+          <button data-src="images/squidbird-work/performance-drivers.jpg" data-cap="Performance report · what drove engagement spikes"><img src="images/squidbird-work/performance-drivers-thumb.jpg" alt="Engagement spike drivers" draggable="false"></button>
+        </div>
+      </article>
+    </div>
+    <p class="note">Want to see a full report? Ask me and I can walk you through one on a call.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ANALYTICS & ADS ============ -->
+<section class="method" id="analytics">
+  <div class="wrap">
+    <p class="mono kicker" style="color:var(--gold)">02 · Google Analytics &amp; Ads strategy &amp; reporting</p>
+    <h2>Traffic you can trust, ads that earn their spend.</h2>
+    <p class="sub">Most teams have Google Analytics and Google Ads running. Far fewer can say what either one is actually doing for them. I set up the tracking, run the campaigns, and report on what's working.</p>
+    <div class="steps">
+      <div class="t"><h3>Analytics setup &amp; audits</h3><p>GA4 configuration, events and conversions, UTM conventions, and a check that the numbers you rely on are real.</p></div>
+      <div class="t"><h3>Google Ads strategy</h3><p>Search campaigns, keyword research, ad copy, and bidding pointed at the conversions that matter most to you.</p></div>
+      <div class="t"><h3>Google Ad Grants</h3><p>Nonprofit Ad Grant accounts managed in-house: staying compliant and optimizing toward real outcomes, not just clicks.</p></div>
+      <div class="t"><h3>Reporting &amp; dashboards</h3><p>Monthly reports and live dashboards that connect site traffic and ad spend to what you're trying to achieve.</p></div>
+    </div>
+    <div class="case">
+      <p class="mono" style="color:var(--gold)">Recent work</p>
+      <p>Brought a nonprofit job board's Google Ad Grant account in-house after an agency handoff, and refocused its campaigns on the employers actually posting jobs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 AUTOMATIONS ============ -->
+<section id="automations">
+  <div class="wrap">
+    <p class="mono kicker">03 · Operational automations</p>
+    <h2>Give your team back the busywork hours.</h2>
+    <p class="sub">AI assistants, agents, and automated trackers for small teams, built on tools you already have, with clear rules about what data the AI can and can't touch.</p>
+    <div class="grid2 autos">
+      <article class="card">
+        <div class="body">
+          <div class="meta"><span class="mono">AI assistant · Nonprofit</span><span class="mono status done">Live</span></div>
+          <h3>LumityBot</h3>
+          <p>An AI assistant for a Chicago workforce nonprofit's staff, so people can get answers from the organization's own knowledge without digging through folders.</p>
+          <div class="tags"><span class="tag build">AI assistant</span><span class="tag dive">Knowledge base</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="body">
+          <div class="meta"><span class="mono">AI agent · AWS</span><span class="mono status">In progress</span></div>
+          <h3>Intake agent</h3>
+          <p>An AI agent that handles the first steps of program intake, so new participants get a fast response and staff get a complete, organized record.</p>
+          <div class="tags"><span class="tag build">AI agent</span><span class="tag dive">AWS</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="body">
+          <div class="meta"><span class="mono">Workflow automation · Microsoft 365</span><span class="mono status done">Live</span></div>
+          <h3>Automated participant tracking</h3>
+          <p>Trackers that fill themselves in. New inquiries flow straight from form notifications into a shared SharePoint tracker, replacing a manual weekly export, with the same setup extended to volunteers.</p>
+          <div class="tags"><span class="tag build">Power Automate</span><span class="tag dive">SharePoint</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="body">
+          <div class="meta"><span class="mono">AI assistant · Fundraising</span></div>
+          <h3>Grants bot</h3>
+          <p>An AI assistant that helps a small development team research, draft, and keep track of grant applications.</p>
+          <div class="tags"><span class="tag build">AI assistant</span><span class="tag draw">Grants</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="past" style="margin-top:28px">
+      <p class="mono" style="color:var(--ink-soft)">What I build with</p>
+      <p class="names">Amazon Bedrock &amp; AWS · Claude · Microsoft Copilot · Power Automate · SharePoint · CRMs &amp; data migrations</p>
+      <p class="mono" style="color:var(--ink-soft);margin-top:12px">Every build comes with an AI data-handling policy your team can follow</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ARCHIVE ============ -->
+<section id="research">
+  <div class="wrap">
+    <p class="mono kicker">From the archive</p>
+    <h2>Research I'm still proud of.</h2>
+    <div class="grid2">
+      <article class="card">
+        <div class="body">
+          <div class="meta"><span class="mono">Audience research · ~2016</span></div>
+          <h3>Silo Season</h3>
+          <p>A study of how social media was sorting voters into echo chambers that never overlapped. The siloing pointed to the outcome of the 2016 election before it happened.</p>
+          <div class="borrow"><b>What you can borrow</b>Audience mapping: finding the communities in your market and where they split.</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="body">
+          <div class="meta"><span class="mono">Search &amp; social trends · 2015</span></div>
+          <h3>You Google What You Scroll</h3>
+          <p>Research showing that what people see on social decides what they search for next, using #JeSuisCharlie to trace how hashtags steered Google searches and the news cycle.</p>
+          <div class="borrow"><b>What you can borrow</b>Search and social trend intelligence: knowing what your audience will look for before they look.</div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section id="about" class="about">
+<section id="about" class="about" style="padding-top:24px">
   <div class="wrap about-grid">
     <div class="portrait">
-      <!-- Replace with: <img src="images/justine.jpg" alt="Justine" style="width:100%;height:100%;object-fit:cover"> -->
-      <span class="mono">your photo here</span>
+      <img src="images/logo.svg" alt="" style="width:55%;opacity:.85">
     </div>
     <div>
       <p class="mono kicker">About</p>
-      <h2>Hi, I'm Justine. Part squid, part bird.</h2>
-      <p>I started as a research assistant at the University of Illinois, moved into people analytics, and then spent about 15 years in advertising and digital media. I ran social analytics teams, built AI applications, and mined big social data for Fortune 500 brands.</p>
-      <p>Somewhere along the way I noticed that everything I make, at work or not, comes back to the same three things: art, data, and fairness. So Squidbird is now where they all live together. (The art itself lives over at <a href="https://justineanalytics.github.io/art/">my art page</a>.)</p>
-      <p>I care a lot about AI ethics. I'd rather show a small team how to do more with less than sell anyone a shiny thing they don't need.</p>
-      <div class="facts">
-        <div class="fact"><div class="n">15</div><div class="l">years of data science</div></div>
-        <div class="fact"><div class="n">1</div><div class="l">resurrected skeleton (so far)</div></div>
-        <div class="fact"><div class="n">48</div><div class="l">hours to make a film</div></div>
-        <div class="fact"><div class="n">∞</div><div class="l">repeating patterns</div></div>
-      </div>
-      <div class="minis" aria-label="A few of Justine's drawings">
-        <img src="images/art/thursday.jpg" alt="Red and blue pen drawing titled Thursday" loading="lazy">
-        <img src="images/art/cameras-vines.jpg" alt="Vintage cameras drawn among blue vines" loading="lazy">
-        <img src="images/art/layla-ringos.jpg" alt="Café interior drawing" loading="lazy">
-        <img src="images/art/succulents.jpg" alt="Succulent pattern drawing" loading="lazy">
-      </div>
+      <h2>Hi, I'm Justine.</h2>
+      <p>I started as a research assistant at the University of Illinois and moved into people analytics. Then I spent about 15 years in advertising and digital media, where I led social analytics and reporting teams, mined big social data for Fortune 500 brands, and was AI lead building AI applications. At VML, I led the shift from manual to automated social media reporting and worked on the agency's award-winning creative data team led by Jason Carmel.</p>
+      <p>Squidbird is my independent practice. I help startups and mission-driven teams plan and measure their social, get real answers out of Google Analytics and Ads, and automate the repetitive work, without needing a big agency budget. Today I also lead data operations at a Chicago workforce nonprofit, where many of the automations above were built.</p>
+      <p>I care a lot about data ethics. I'd rather show a small team how to do more with less than sell anyone a shiny thing they don't need.</p>
+      <p style="color:var(--ink-soft);font-size:.95rem">Looking for my art and personal projects? They live at <a href="https://justineanalytics.github.io/">Justine Braun</a>.</p>
     </div>
   </div>
 </section>
@@ -486,19 +475,18 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <p class="mono kicker" style="color:#fff">Contact</p>
-    <h2>Got a weird idea or a boring problem?</h2>
-    <p class="sub">I like both. Tell me what you're working on.</p>
+    <h2>Let's look at your data.</h2>
+    <p class="sub">Tell me what you're working on and what you want to know.</p>
     <div class="contact-box">
-      <!-- Set the action to your form handler (e.g. Formspree/Netlify) or keep the mailto fallback. -->
       <form action="mailto:justine@squidbird.io" method="post" enctype="text/plain">
         <label>Name<input name="name" required></label>
         <label>Email<input name="email" type="email" required></label>
         <label>What do you need?
           <select name="need">
-            <option>Understand my people (Dive)</option>
-            <option>Build a tool (Build)</option>
-            <option>Make it unforgettable (Draw)</option>
-            <option>All three, honestly</option>
+            <option>Social media strategy &amp; reporting</option>
+            <option>Google Analytics &amp; Ads</option>
+            <option>An automation or AI assistant</option>
+            <option>Not sure yet</option>
           </select>
         </label>
         <label>Tell me more<textarea name="message"></textarea></label>
@@ -516,19 +504,32 @@
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> Squidbird LLC · Chicago</span>
-    <span>Squidbird is the studio of <a href="https://justineanalytics.github.io/" style="color:#fff">Justine Braun</a>. Made by hand, with tentacles.</span>
+    <span>Squidbird is the marketing analytics &amp; automation practice of <a href="https://justineanalytics.github.io/" style="color:#fff">Justine Braun</a>.</span>
   </div>
 </footer>
 
+<!-- lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Report preview">
+  <div class="ctl"><button id="lbPrev" aria-label="Previous page">← Prev</button><button id="lbNext" aria-label="Next page">Next →</button><button id="lbClose" aria-label="Close preview">Close ✕</button></div>
+  <figure><img id="lbImg" alt="" draggable="false"><figcaption><span id="lbCap"></span><span class="mono">Preview · figures removed</span></figcaption></figure>
+</div>
+
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-  const chips = document.querySelectorAll('.chip');
-  const cards = document.querySelectorAll('#grid .card');
-  chips.forEach(c => c.addEventListener('click', () => {
-    chips.forEach(x => x.setAttribute('aria-pressed', x === c));
-    const f = c.dataset.f;
-    cards.forEach(card => card.classList.toggle('hide', f !== 'all' && !card.dataset.t.split(' ').includes(f)));
+  const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
+  let set=[], idx=0, opener=null;
+  function show(){ const b=set[idx]; lbImg.src=b.dataset.src; lbImg.alt=b.querySelector('img').alt; lbCap.textContent=b.dataset.cap; }
+  document.querySelectorAll('.pages button').forEach(b=>b.addEventListener('click',()=>{
+    set=[...b.parentElement.querySelectorAll('button')]; idx=set.indexOf(b); opener=b; show(); lb.classList.add('open'); document.getElementById('lbClose').focus();
   }));
+  function close(){ lb.classList.remove('open'); if(opener) opener.focus(); }
+  document.getElementById('lbClose').onclick=close;
+  document.getElementById('lbNext').onclick=()=>{idx=(idx+1)%set.length;show()};
+  document.getElementById('lbPrev').onclick=()=>{idx=(idx-1+set.length)%set.length;show()};
+  lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+  document.addEventListener('keydown',e=>{ if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close(); if(e.key==='ArrowRight') document.getElementById('lbNext').click(); if(e.key==='ArrowLeft') document.getElementById('lbPrev').click(); });
+  document.querySelectorAll('.pages, .lb, .hero-art').forEach(el=>el.addEventListener('contextmenu',e=>e.preventDefault()));
 </script>
 </body>
 </html>
