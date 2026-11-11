@@ -221,6 +221,33 @@
   .track span:last-child{font-size:.88rem;color:var(--ink-soft)}
   .track .mono{color:var(--coral)}
   @media (max-width:860px){.timeline{grid-template-columns:1fr;gap:18px}.timeline::before{left:13px;right:auto;top:14px;bottom:14px;border-top:0;border-left:2px dashed var(--ink)}.timeline li{padding:0 0 0 44px}.track{margin-left:44px}}
+  .hero-grid{grid-template-columns:.85fr 1.25fr}
+  .slider{position:relative;background:var(--card);border:1.5px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:14px}
+  .slider.pages{display:block}
+  .card.pages{display:flex;gap:0}
+  .track-s{position:relative}
+  .slide{display:none;margin:0}
+  .slide.on{display:block;animation:fade .45s ease}
+  @keyframes fade{from{opacity:.2}to{opacity:1}}
+  .slider .slide button{all:unset;cursor:zoom-in;display:block;width:100%}
+  .slide button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+  .slide img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#fff;border:1.5px solid var(--ink);border-radius:10px;user-select:none;-webkit-user-drag:none}
+  .slide figcaption{margin-top:10px;min-height:3.2em;font-size:.95rem;color:var(--ink-soft)}
+  .slide figcaption b{display:block;font-family:var(--serif);font-size:1.15rem;color:var(--ink)}
+  .sctl{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+  .slider .arrow{display:grid;place-items:center;font:inherit;font-size:1.1rem;background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer}
+  .slider .arrow:hover{background:var(--gold)}
+  .dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+  .slider .dot{display:inline-block;width:11px;height:11px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;padding:0;cursor:pointer}
+  .slider .dot.on{background:var(--coral)}
+  .snote{margin-top:8px;color:var(--ink-soft);font-size:.7rem}
+  .reports-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:20px;list-style:none}
+  .reports-list li{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:12px 14px;font-size:.95rem}
+  .reports-list b{display:block;font-family:var(--serif);font-size:1.05rem}
+  .reports-list span{color:var(--ink-soft);font-size:.88rem}
+  .rthumb{all:unset;cursor:zoom-in;display:block;border-bottom:1.5px solid var(--ink)}
+  .rthumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.slider{order:-1}header.hero{padding-top:28px}}
 </style>
 </head>
 <body>
@@ -233,9 +260,9 @@
       Squidbird
     </a>
     <ul class="links">
-      <li><a href="#social">Social</a></li>
+      <li><a href="#automations">AI Automations</a></li>
       <li><a href="#analytics">Analytics &amp; Ads</a></li>
-      <li><a href="#automations">Automations</a></li>
+      <li><a href="#social">Social</a></li>
       <li><a href="#about">About</a></li>
     </ul>
     <a class="btn" href="#contact">Say hi</a>
@@ -248,161 +275,46 @@
     <div>
       <p class="mono kicker">Marketing analytics &amp; automation · Chicago</p>
       <h1>Know what's working, <em>why</em>, and <span class="u">what to do next</span>.</h1>
-      <p class="lede">Squidbird is me, Justine Braun: a marketing data analyst with 15 years of turning social, search, and audience data into strategy for Fortune 500 brands. Now I help startups and mission-driven teams measure their marketing and automate the busywork around it.</p>
+      <p class="lede">Squidbird is me, Justine Braun: a marketing data analyst with 15 years of turning social, search, and audience data into strategy for Fortune 500 brands. Now I help startups and mission-driven teams automate the busywork, track what their marketing is doing, and plan what comes next.</p>
       <div class="ctas">
         <a class="btn" href="#social">See sample reports</a>
         <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
     </div>
-    <div class="hero-art" style="transform:rotate(1.5deg)">
-      <img src="images/squidbird-work/audit-features.jpg" alt="Preview of a competitive feature matrix from a Squidbird research audit" draggable="false" oncontextmenu="return false">
-      <p class="mono" style="margin-top:10px;color:var(--ink-soft)">From a Squidbird research audit</p>
+    <div class="slider pages" id="slider" aria-roledescription="carousel" aria-label="Examples from past reports">
+      <div class="track-s">
+        <figure class="slide on" data-i="0"><button type="button" data-src="images/squidbird-gallery/slide-query.jpg" data-cap="Custom social listening: One query, many answers: share of voice, brand perception and topic trends from a single social listening query." aria-label="Enlarge: Custom social listening"><img src="images/squidbird-gallery/slide-query.jpg" alt="Custom social listening example slide" draggable="false"></button><figcaption><b>Custom social listening</b><span>One query, many answers: share of voice, brand perception and topic trends from a single social listening query.</span></figcaption></figure>
+        <figure class="slide" data-i="1"><button type="button" data-src="images/squidbird-gallery/slide-content-impact.jpg" data-cap="Content performance: Which posts beat each channel’s engagement average, and by how much." aria-label="Enlarge: Content performance"><img src="images/squidbird-gallery/slide-content-impact.jpg" alt="Content performance example slide" draggable="false" loading="lazy"></button><figcaption><b>Content performance</b><span>Which posts beat each channel’s engagement average, and by how much.</span></figcaption></figure>
+        <figure class="slide" data-i="2"><button type="button" data-src="images/squidbird-gallery/slide-franchise-treemap.jpg" data-cap="Content series analysis: Every content series compared by post volume and engagement in one view." aria-label="Enlarge: Content series analysis"><img src="images/squidbird-gallery/slide-franchise-treemap.jpg" alt="Content series analysis example slide" draggable="false" loading="lazy"></button><figcaption><b>Content series analysis</b><span>Every content series compared by post volume and engagement in one view.</span></figcaption></figure>
+        <figure class="slide" data-i="3"><button type="button" data-src="images/squidbird-gallery/slide-topics-share.jpg" data-cap="Competitive share of voice: Which brands own the conversation in each product category." aria-label="Enlarge: Competitive share of voice"><img src="images/squidbird-gallery/slide-topics-share.jpg" alt="Competitive share of voice example slide" draggable="false" loading="lazy"></button><figcaption><b>Competitive share of voice</b><span>Which brands own the conversation in each product category.</span></figcaption></figure>
+        <figure class="slide" data-i="4"><button type="button" data-src="images/squidbird-gallery/slide-adjective-tagging.jpg" data-cap="Perception tagging: How people describe a category over time, tagged by the words they use." aria-label="Enlarge: Perception tagging"><img src="images/squidbird-gallery/slide-adjective-tagging.jpg" alt="Perception tagging example slide" draggable="false" loading="lazy"></button><figcaption><b>Perception tagging</b><span>How people describe a category over time, tagged by the words they use.</span></figcaption></figure>
+        <figure class="slide" data-i="5"><button type="button" data-src="images/squidbird-gallery/slide-topic-volume.jpg" data-cap="Topic tracking: What a market is talking about, and what’s rising or falling." aria-label="Enlarge: Topic tracking"><img src="images/squidbird-gallery/slide-topic-volume.jpg" alt="Topic tracking example slide" draggable="false" loading="lazy"></button><figcaption><b>Topic tracking</b><span>What a market is talking about, and what’s rising or falling.</span></figcaption></figure>
+        <figure class="slide" data-i="6"><button type="button" data-src="images/squidbird-gallery/slide-virality-map.jpg" data-cap="Virality mapping: How one newspaper story spread to news sites, blogs and Twitter over three days." aria-label="Enlarge: Virality mapping"><img src="images/squidbird-gallery/slide-virality-map.jpg" alt="Virality mapping example slide" draggable="false" loading="lazy"></button><figcaption><b>Virality mapping</b><span>How one newspaper story spread to news sites, blogs and Twitter over three days.</span></figcaption></figure>
+        <figure class="slide" data-i="7"><button type="button" data-src="images/squidbird-gallery/slide-polarization.jpg" data-cap="Network analysis: How Republicans and Democrats interacted on Twitter around the 2016 election, Brexit and Pokémon Go." aria-label="Enlarge: Network analysis"><img src="images/squidbird-gallery/slide-polarization.jpg" alt="Network analysis example slide" draggable="false" loading="lazy"></button><figcaption><b>Network analysis</b><span>How Republicans and Democrats interacted on Twitter around the 2016 election, Brexit and Pokémon Go.</span></figcaption></figure>
+        <figure class="slide" data-i="8"><button type="button" data-src="images/squidbird-gallery/slide-opposing-hashtags.jpg" data-cap="Hashtag research: How often a hashtag movement is answered by an alternative-viewpoint hashtag on its peak day." aria-label="Enlarge: Hashtag research"><img src="images/squidbird-gallery/slide-opposing-hashtags.jpg" alt="Hashtag research example slide" draggable="false" loading="lazy"></button><figcaption><b>Hashtag research</b><span>How often a hashtag movement is answered by an alternative-viewpoint hashtag on its peak day.</span></figcaption></figure>
+        <figure class="slide" data-i="9"><button type="button" data-src="images/squidbird-gallery/slide-jesuischarlie.jpg" data-cap="Search & social trends: How #JeSuisCharlie tweets surged ahead of Google searches." aria-label="Enlarge: Search & social trends"><img src="images/squidbird-gallery/slide-jesuischarlie.jpg" alt="Search & social trends example slide" draggable="false" loading="lazy"></button><figcaption><b>Search & social trends</b><span>How #JeSuisCharlie tweets surged ahead of Google searches.</span></figcaption></figure>
+      </div>
+      <div class="sctl">
+        <button type="button" class="arrow" id="sPrev" aria-label="Previous slide">←</button>
+        <div class="dots"><button type="button" class="dot on" aria-label="Show slide 1" data-go="0"></button><button type="button" class="dot" aria-label="Show slide 2" data-go="1"></button><button type="button" class="dot" aria-label="Show slide 3" data-go="2"></button><button type="button" class="dot" aria-label="Show slide 4" data-go="3"></button><button type="button" class="dot" aria-label="Show slide 5" data-go="4"></button><button type="button" class="dot" aria-label="Show slide 6" data-go="5"></button><button type="button" class="dot" aria-label="Show slide 7" data-go="6"></button><button type="button" class="dot" aria-label="Show slide 8" data-go="7"></button><button type="button" class="dot" aria-label="Show slide 9" data-go="8"></button><button type="button" class="dot" aria-label="Show slide 10" data-go="9"></button></div>
+        <button type="button" class="arrow" id="sNext" aria-label="Next slide">→</button>
+      </div>
+      <p class="mono snote">Examples from past reports · client figures removed</p>
     </div>
   </div>
   <div class="wrap">
     <div class="practices">
-      <a class="practice" href="#social"><span class="tag dive">01</span><b>Social media strategy &amp; reporting</b><span>Audits, playbooks, and monthly reports for every social channel.</span></a>
+      <a class="practice" href="#automations"><span class="tag draw">01</span><b>AI &amp; operational automations</b><span>AI assistants, agents, and trackers that do the repetitive work for your team.</span></a>
       <a class="practice" href="#analytics"><span class="tag build">02</span><b>Google Analytics &amp; Ads</b><span>Tracking you can trust, smarter campaigns, and reports that explain them.</span></a>
-      <a class="practice" href="#automations"><span class="tag draw">03</span><b>Operational automations</b><span>AI assistants, agents, and trackers that do the repetitive work for your team.</span></a>
+      <a class="practice" href="#social"><span class="tag dive">03</span><b>Social media strategy &amp; reporting</b><span>Audits, playbooks, and monthly reports for every social channel.</span></a>
     </div>
   </div>
 </header>
 
-<!-- ============ 01 SOCIAL ============ -->
-<section id="social" style="padding-top:24px">
+<!-- ============ 01 AUTOMATIONS ============ -->
+<section id="automations" style="padding-top:24px">
   <div class="wrap">
-    <p class="mono kicker">01 · Social media strategy &amp; reporting</p>
-    <h2>Know what to post, where, and why.</h2>
-    <p class="sub">From a first look at your competitors to the monthly report that tells you what to do next.</p>
-    <div class="services">
-      <div class="svc">
-        <h3>Research audits</h3>
-        <p>Where you stand, who you're up against, and where the white space is.</p>
-        <ul>
-          <li>Competitive &amp; market analysis</li>
-          <li>Channel health &amp; audience demographics</li>
-          <li>Content, keyword &amp; hashtag analysis</li>
-          <li>Social listening &amp; Reddit research</li>
-        </ul>
-      </div>
-      <div class="svc">
-        <h3>Social playbooks</h3>
-        <p>A plan your team can actually follow.</p>
-        <ul>
-          <li>Brand positioning, voice &amp; messaging pillars</li>
-          <li>Audience personas &amp; A/B test design</li>
-          <li>Channel mix, cadence &amp; content calendars</li>
-          <li>Organic launch strategy for new apps</li>
-        </ul>
-      </div>
-      <div class="svc">
-        <h3>Performance reporting</h3>
-        <p>Reports that explain the numbers, not just list them.</p>
-        <ul>
-          <li>Monthly &amp; lookback performance reports</li>
-          <li>Benchmarks, KPIs &amp; goal setting</li>
-          <li>Post-type, topic &amp; timing analysis</li>
-          <li>Automated reporting &amp; dashboards</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="past">
-      <p class="mono" style="color:var(--ink-soft)">Before Squidbird, I led social analytics and reporting for brands including</p>
-      <p class="names">Google Security · Airbnb · Microsoft · lululemon · Venmo · Gatorade · Red Bull · Taco Bell · Target</p>
-      <p style="margin-top:10px;font-size:.98rem">At VML, I led the agency's move from manual to automated social media reporting, and I was part of its award-winning five-person creative data team led by <a href="https://www.vml.com/people/jason-carmel" target="_blank" rel="noopener">Jason Carmel</a>.</p>
-      <p class="mono" style="color:var(--ink-soft);margin-top:12px">Recent Squidbird clients: Our Voices · iGolf Better · Vaiku AI</p>
-    </div>
-
-    <h3 class="subhead">A peek inside the reports</h3>
-    <p class="sub">Click any page to take a closer look. These are previews only: every figure has been removed, and full reports stay with the clients they were made for.</p>
-
-    <div class="work">
-      <article class="report">
-        <div>
-          <div class="meta"><span class="mono">Civic-tech app · Research audit</span></div>
-          <h3>Competitive &amp; market research audit</h3>
-          <p>A full audit for Our Voices, a civic-tech app launching on social, before it posted anything.</p>
-          <ul>
-            <li>Feature matrix across direct competitors to find a differentiator</li>
-            <li>Platform health, engagement and audience demographics by channel</li>
-            <li>Top content, term and hashtag analysis across every competitor</li>
-            <li>Reddit research on what voters praise, complain about and ask for</li>
-          </ul>
-        </div>
-        <div class="pages" data-set="Research audit">
-          <button data-src="images/squidbird-work/audit-cover.jpg" data-cap="Research audit · cover"><img src="images/squidbird-work/audit-cover-thumb.jpg" alt="Research audit cover" draggable="false"></button>
-          <button data-src="images/squidbird-work/audit-features.jpg" data-cap="Research audit · feature matrix of direct competitors"><img src="images/squidbird-work/audit-features-thumb.jpg" alt="Competitor feature matrix" draggable="false"></button>
-          <button data-src="images/squidbird-work/audit-terms.jpg" data-cap="Research audit · cross-platform term &amp; hashtag analysis"><img src="images/squidbird-work/audit-terms-thumb.jpg" alt="Term and hashtag analysis" draggable="false"></button>
-          <button data-src="images/squidbird-work/audit-channels.jpg" data-cap="Research audit · engagement rate by platform"><img src="images/squidbird-work/audit-channels-thumb.jpg" alt="Engagement rate by platform chart" draggable="false"></button>
-        </div>
-      </article>
-
-      <article class="report">
-        <div>
-          <div class="meta"><span class="mono">Civic-tech app · Strategy</span></div>
-          <h3>Social playbook &amp; content strategy</h3>
-          <p>The follow-up to the audit: everything the team needed to launch and grow on social, phase by phase.</p>
-          <ul>
-            <li>Brand positioning, voice and tone, and messaging pillars</li>
-            <li>Audience personas and an A/B testing plan</li>
-            <li>A phased platform mix, cadence and content calendar</li>
-            <li>A step-by-step guide for a social media manager, plus measurement</li>
-          </ul>
-        </div>
-        <div class="pages" data-set="Social playbook">
-          <button data-src="images/squidbird-work/playbook-cover.jpg" data-cap="Social playbook · cover"><img src="images/squidbird-work/playbook-cover-thumb.jpg" alt="Social playbook cover" draggable="false"></button>
-          <button data-src="images/squidbird-work/playbook-voice.jpg" data-cap="Social playbook · brand voice attributes"><img src="images/squidbird-work/playbook-voice-thumb.jpg" alt="Brand voice attributes table" draggable="false"></button>
-          <button data-src="images/squidbird-work/playbook-personas.jpg" data-cap="Social playbook · personas for A/B testing"><img src="images/squidbird-work/playbook-personas-thumb.jpg" alt="Personas for A/B testing" draggable="false"></button>
-          <button data-src="images/squidbird-work/playbook-rollout.jpg" data-cap="Social playbook · phased platform mix"><img src="images/squidbird-work/playbook-rollout-thumb.jpg" alt="Phased platform mix" draggable="false"></button>
-        </div>
-      </article>
-
-      <article class="report">
-        <div>
-          <div class="meta"><span class="mono">Nonprofit · Performance report</span></div>
-          <h3>Instagram performance report</h3>
-          <p>A multi-year look at a nonprofit's Instagram, built from an API export, to explain why engagement rose and fell and what to do about it.</p>
-          <ul>
-            <li>Post volume vs. engagement over time</li>
-            <li>What the top and bottom posts had in common</li>
-            <li>Post type, keyword and day-of-week segmentation</li>
-            <li>"Do more / do less" optimizations</li>
-          </ul>
-        </div>
-        <div class="pages" data-set="Performance report">
-          <button data-src="images/squidbird-work/performance-trend.jpg" data-cap="Performance report · volume and engagement over time"><img src="images/squidbird-work/performance-trend-thumb.jpg" alt="Post volume and engagement trend chart" draggable="false"></button>
-          <button data-src="images/squidbird-work/performance-drivers.jpg" data-cap="Performance report · what drove engagement spikes"><img src="images/squidbird-work/performance-drivers-thumb.jpg" alt="Engagement spike drivers" draggable="false"></button>
-        </div>
-      </article>
-    </div>
-    <p class="note">Want to see a full report? Ask me and I can walk you through one on a call.</p>
-  </div>
-</section>
-
-<!-- ============ 02 ANALYTICS & ADS ============ -->
-<section class="method" id="analytics">
-  <div class="wrap">
-    <p class="mono kicker" style="color:var(--gold)">02 · Google Analytics &amp; Ads strategy &amp; reporting</p>
-    <h2>Traffic you can trust, ads that earn their spend.</h2>
-    <p class="sub">Most teams have Google Analytics and Google Ads running. Far fewer can say what either one is actually doing for them. I set up the tracking, run the campaigns, and report on what's working.</p>
-    <div class="steps">
-      <div class="t"><h3>Analytics setup &amp; audits</h3><p>GA4 configuration, events and conversions, UTM conventions, and a check that the numbers you rely on are real.</p></div>
-      <div class="t"><h3>Google Ads strategy</h3><p>Search campaigns, keyword research, ad copy, and bidding pointed at the conversions that matter most to you.</p></div>
-      <div class="t"><h3>Google Ad Grants</h3><p>Nonprofit Ad Grant accounts managed in-house: staying compliant and optimizing toward real outcomes, not just clicks.</p></div>
-      <div class="t"><h3>Reporting &amp; dashboards</h3><p>Monthly reports and live dashboards that connect site traffic and ad spend to what you're trying to achieve.</p></div>
-    </div>
-    <div class="case">
-      <p class="mono" style="color:var(--gold)">Recent work</p>
-      <p>Brought a nonprofit job board's Google Ad Grant account in-house after an agency handoff, and refocused its campaigns on the employers actually posting jobs.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 03 AUTOMATIONS ============ -->
-<section id="automations">
-  <div class="wrap">
-    <p class="mono kicker">03 · Operational automations</p>
+    <p class="mono kicker">01 · AI &amp; operational automations</p>
     <h2>Give your team back the busywork hours.</h2>
     <p class="sub">AI assistants, agents, and automated trackers for small teams, built on tools you already have, with clear rules about what data the AI can and can't touch.</p>
     <div class="grid2 autos">
@@ -447,6 +359,153 @@
   </div>
 </section>
 
+<!-- ============ 02 ANALYTICS & ADS ============ -->
+<section class="method" id="analytics">
+  <div class="wrap">
+    <p class="mono kicker" style="color:var(--gold)">02 · Google Analytics &amp; Ads strategy &amp; reporting</p>
+    <h2>Traffic you can trust, ads that earn their spend.</h2>
+    <p class="sub">Most teams have Google Analytics and Google Ads running. Far fewer can say what either one is actually doing for them. I set up the tracking, run the campaigns, and report on what's working.</p>
+    <div class="steps">
+      <div class="t"><h3>Analytics setup &amp; audits</h3><p>GA4 configuration, events and conversions, UTM conventions, and a check that the numbers you rely on are real.</p></div>
+      <div class="t"><h3>Google Ads strategy</h3><p>Search campaigns, keyword research, ad copy, and bidding pointed at the conversions that matter most to you.</p></div>
+      <div class="t"><h3>Google Ad Grants</h3><p>Nonprofit Ad Grant accounts managed in-house: staying compliant and optimizing toward real outcomes, not just clicks.</p></div>
+      <div class="t"><h3>Reporting &amp; dashboards</h3><p>Monthly reports and live dashboards that connect site traffic and ad spend to what you're trying to achieve.</p></div>
+    </div>
+    <div class="case">
+      <p class="mono" style="color:var(--gold)">Recent work</p>
+      <p>Brought a nonprofit job board's Google Ad Grant account in-house after an agency handoff, and refocused its campaigns on the employers actually posting jobs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 SOCIAL ============ -->
+<section id="social">
+  <div class="wrap">
+    <p class="mono kicker">03 · Social media strategy &amp; reporting</p>
+    <h2>Know what to post, where, and why.</h2>
+    <p class="sub">From a first look at your competitors to the monthly report that tells you what to do next.</p>
+    <div class="services">
+      <div class="svc">
+        <h3>Research audits</h3>
+        <p>Where you stand, who you're up against, and where the white space is.</p>
+        <ul>
+          <li>Competitive &amp; market analysis</li>
+          <li>Channel health &amp; audience demographics</li>
+          <li>Content, keyword &amp; hashtag analysis</li>
+          <li>Social listening &amp; Reddit research</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Social playbooks</h3>
+        <p>A plan your team can actually follow.</p>
+        <ul>
+          <li>Brand positioning, voice &amp; messaging pillars</li>
+          <li>Audience personas &amp; A/B test design</li>
+          <li>Channel mix, cadence &amp; content calendars</li>
+          <li>Organic launch strategy for new apps</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Performance reporting</h3>
+        <p>Reports that explain the numbers, not just list them.</p>
+        <ul>
+          <li>Monthly &amp; lookback performance reports</li>
+          <li>Benchmarks, KPIs &amp; goal setting</li>
+          <li>Post-type, topic &amp; timing analysis</li>
+          <li>Automated reporting &amp; dashboards</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="past">
+      <p class="mono" style="color:var(--ink-soft)">Before Squidbird, I led social analytics and reporting for brands including</p>
+      <p class="names">Google Security · Airbnb · Microsoft · lululemon · Venmo · Gatorade · Red Bull · Taco Bell · Target</p>
+      <p style="margin-top:10px;font-size:.98rem">At VML, I led the agency's move from manual to automated social media reporting, and I was part of its award-winning five-person creative data team led by <a href="https://www.vml.com/people/jason-carmel" target="_blank" rel="noopener">Jason Carmel</a>.</p>
+      <p class="mono" style="color:var(--ink-soft);margin-top:12px">Recent Squidbird clients: Our Voices · iGolf Better · Vaiku AI</p>
+    </div>
+
+
+    <h3 class="subhead">Reports I build</h3>
+    <p class="sub">Recurring reports, one-off deep dives, and custom research, built from social listening, owned channel data, and search data.</p>
+    <ul class="reports-list">
+      <li><b>Weekly trend reports</b><span>What's spiking in your category this week, and what to post about it.</span></li>
+      <li><b>Monthly &amp; quarterly reports</b><span>Channel performance against benchmarks, automated so they arrive on time.</span></li>
+      <li><b>Competitive analysis</b><span>Share of voice, follower growth and content strategy for the brands you're up against.</span></li>
+      <li><b>Content gap analysis</b><span>The topics your audience wants that you aren't covering yet.</span></li>
+      <li><b>White space analysis</b><span>Conversations no brand in your space owns, and how to claim them.</span></li>
+      <li><b>Quality engagement analysis</b><span>Which comments and shares signal real interest, not just reach.</span></li>
+      <li><b>Content series analysis</b><span>How each recurring series or franchise performs by channel.</span></li>
+      <li><b>Customer journey analysis</b><span>Where people talk about you at each step from discovery to loyalty.</span></li>
+      <li><b>Community management impact</b><span>What your replies and moderation actually change.</span></li>
+      <li><b>Custom social listening</b><span>Research built around one question, like "Cool to Cringe: the lifespan of a social trend."</span></li>
+    </ul>
+
+    <h3 class="subhead">A peek inside the reports</h3>
+    <p class="sub">Click any page to take a closer look. Client figures have been removed, and full reports stay with the clients they were made for.</p>
+
+    <div class="work">
+      <article class="report">
+        <div>
+          <div class="meta"><span class="mono">Civic-tech app · Research audit</span></div>
+          <h3>Competitive &amp; market research audit</h3>
+          <p>A full audit for Our Voices, a civic-tech app launching on social, before it posted anything.</p>
+          <ul>
+            <li>Feature matrix across direct competitors to find a differentiator</li>
+            <li>Platform health, engagement and audience demographics by channel</li>
+            <li>Top content, term and hashtag analysis across every competitor</li>
+            <li>Reddit research on what voters praise, complain about and ask for</li>
+          </ul>
+        </div>
+        <div class="pages" data-set="Research audit">
+          <button data-src="images/squidbird-gallery/r-audit-cover.jpg" data-cap="Research audit · cover"><img src="images/squidbird-gallery/r-audit-cover-thumb.jpg" alt="Research audit cover" draggable="false"></button>
+          <button data-src="images/squidbird-gallery/r-audit-features.jpg" data-cap="Research audit · feature matrix of direct competitors"><img src="images/squidbird-gallery/r-audit-features-thumb.jpg" alt="Competitor feature matrix" draggable="false"></button>
+          <button data-src="images/squidbird-gallery/r-audit-terms.jpg" data-cap="Research audit · cross-platform term &amp; hashtag analysis"><img src="images/squidbird-gallery/r-audit-terms-thumb.jpg" alt="Term and hashtag analysis" draggable="false"></button>
+          <button data-src="images/squidbird-gallery/r-audit-channels.jpg" data-cap="Research audit · engagement rate by platform"><img src="images/squidbird-gallery/r-audit-channels-thumb.jpg" alt="Engagement rate by platform chart" draggable="false"></button>
+        </div>
+      </article>
+
+      <article class="report">
+        <div>
+          <div class="meta"><span class="mono">Civic-tech app · Strategy</span></div>
+          <h3>Social playbook &amp; content strategy</h3>
+          <p>The follow-up to the audit: everything the team needed to launch and grow on social, phase by phase.</p>
+          <ul>
+            <li>Brand positioning, voice and tone, and messaging pillars</li>
+            <li>Audience personas and an A/B testing plan</li>
+            <li>A phased platform mix, cadence and content calendar</li>
+            <li>A step-by-step guide for a social media manager, plus measurement</li>
+          </ul>
+        </div>
+        <div class="pages" data-set="Social playbook">
+          <button data-src="images/squidbird-gallery/r-playbook-cover.jpg" data-cap="Social playbook · cover"><img src="images/squidbird-gallery/r-playbook-cover-thumb.jpg" alt="Social playbook cover" draggable="false"></button>
+          <button data-src="images/squidbird-gallery/r-playbook-voice.jpg" data-cap="Social playbook · brand voice attributes"><img src="images/squidbird-gallery/r-playbook-voice-thumb.jpg" alt="Brand voice attributes table" draggable="false"></button>
+          <button data-src="images/squidbird-gallery/r-playbook-personas.jpg" data-cap="Social playbook · personas for A/B testing"><img src="images/squidbird-gallery/r-playbook-personas-thumb.jpg" alt="Personas for A/B testing" draggable="false"></button>
+          <button data-src="images/squidbird-gallery/r-playbook-rollout.jpg" data-cap="Social playbook · phased platform mix"><img src="images/squidbird-gallery/r-playbook-rollout-thumb.jpg" alt="Phased platform mix" draggable="false"></button>
+        </div>
+      </article>
+
+      <article class="report">
+        <div>
+          <div class="meta"><span class="mono">Nonprofit · Performance report</span></div>
+          <h3>Instagram performance report</h3>
+          <p>A multi-year look at a nonprofit's Instagram, built from an API export, to explain why engagement rose and fell and what to do about it.</p>
+          <ul>
+            <li>Post volume vs. engagement over time</li>
+            <li>What the top and bottom posts had in common</li>
+            <li>Post type, keyword and day-of-week segmentation</li>
+            <li>"Do more / do less" optimizations</li>
+          </ul>
+        </div>
+        <div class="pages" data-set="Performance report">
+          <button data-src="images/squidbird-gallery/r-performance-trend.jpg" data-cap="Performance report · volume and engagement over time"><img src="images/squidbird-gallery/r-performance-trend-thumb.jpg" alt="Post volume and engagement trend chart" draggable="false"></button>
+          <button data-src="images/squidbird-gallery/r-performance-drivers.jpg" data-cap="Performance report · what drove engagement spikes"><img src="images/squidbird-gallery/r-performance-drivers-thumb.jpg" alt="Engagement spike drivers" draggable="false"></button>
+        </div>
+      </article>
+    </div>
+    <p class="note">Want to see a full report? Ask me and I can walk you through one on a call.</p>
+  </div>
+</section>
+
 <!-- ============ RESEARCH ============ -->
 <section id="research">
   <div class="wrap">
@@ -473,20 +532,23 @@
     </article>
 
     <div class="grid2" style="margin-top:34px">
-      <article class="card">
+      <article class="card pages">
+        <button type="button" class="rthumb" data-src="images/squidbird-gallery/slide-jesuischarlie.jpg" data-cap="#JeSuisCharlie: tweets vs. searches by day"><img src="images/squidbird-gallery/slide-jesuischarlie-thumb.jpg" alt="Chart of #JeSuisCharlie tweets and searches by day" loading="lazy" draggable="false"></button>
         <div class="body">
           <div class="meta"><span class="mono">Search &amp; social trends · 2015</span></div>
           <h3>You Google What You Scroll</h3>
           <p>Research showing that what people see on social decides what they search for next, using #JeSuisCharlie to trace how hashtags steered Google searches and the news cycle.</p>
+          <p><a href="images/squidbird-gallery/research-jesuischarlie.jpg" target="_blank" rel="noopener">See the full #JeSuisCharlie infographic ↗</a></p>
           <div class="borrow"><b>What you can borrow</b>Search and social trend intelligence: knowing what your audience will look for before they look.</div>
         </div>
       </article>
-      <article class="card">
+      <article class="card pages">
+        <button type="button" class="rthumb" data-src="images/squidbird-gallery/slide-opposing-hashtags.jpg" data-cap="Opposing hashtags: original vs. alternative-viewpoint tweets on each movement's peak day"><img src="images/squidbird-gallery/slide-opposing-hashtags-thumb.jpg" alt="Infographic comparing hashtag movements with their alternative-viewpoint hashtags" loading="lazy" draggable="false"></button>
         <div class="body">
-          <div class="meta"><span class="mono">Audience mapping</span></div>
-          <h3>Bring this to your audience</h3>
-          <p>The same network analysis works for any market: find the communities around your brand, the bridges between them, and the people who carry a message from one to the next.</p>
-          <div class="borrow"><b>What you can borrow</b>Audience mapping: finding the communities in your market and where they split.</div>
+          <div class="meta"><span class="mono">Hashtag research</span></div>
+          <h3>The Other Side of the Hashtag</h3>
+          <p>On each movement's peak day, how many tweets used the original hashtag versus its alternative-viewpoint hashtag: #LoveWins vs. #OneManOneWoman, #Gamergate vs. #NotYourShield, #JeSuisCharlie vs. #JeSuisAhmed, and #BlackLivesMatter vs. #AllLivesMatter.</p>
+          <div class="borrow"><b>What you can borrow</b>Counter-conversation tracking: seeing how loud the pushback on a message really is.</div>
         </div>
       </article>
     </div>
@@ -534,9 +596,9 @@
         <label>Email<input name="email" type="email" required></label>
         <label>What do you need?
           <select name="need">
-            <option>Social media strategy &amp; reporting</option>
-            <option>Google Analytics &amp; Ads</option>
             <option>An automation or AI assistant</option>
+            <option>Google Analytics &amp; Ads</option>
+            <option>Social media strategy &amp; reporting</option>
             <option>Not sure yet</option>
           </select>
         </label>
@@ -562,7 +624,7 @@
 <!-- lightbox -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Report preview">
   <div class="ctl"><button id="lbPrev" aria-label="Previous page">← Prev</button><button id="lbNext" aria-label="Next page">Next →</button><button id="lbClose" aria-label="Close preview">Close ✕</button></div>
-  <figure><img id="lbImg" alt="" draggable="false"><figcaption><span id="lbCap"></span><span class="mono">Preview · figures removed</span></figcaption></figure>
+  <figure><img id="lbImg" alt="" draggable="false"><figcaption><span id="lbCap"></span><span class="mono">Client figures removed</span></figcaption></figure>
 </div>
 
 <script>
@@ -570,8 +632,8 @@
   const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
   let set=[], idx=0, opener=null;
   function show(){ const b=set[idx]; lbImg.src=b.dataset.src; lbImg.alt=b.querySelector('img').alt; lbCap.textContent=b.dataset.cap; }
-  document.querySelectorAll('.pages button').forEach(b=>b.addEventListener('click',()=>{
-    set=[...b.parentElement.querySelectorAll('button')]; idx=set.indexOf(b); opener=b; show(); lb.classList.add('open'); document.getElementById('lbClose').focus();
+  document.querySelectorAll('.pages button[data-src]').forEach(b=>b.addEventListener('click',()=>{
+    set=[...b.closest('.pages').querySelectorAll('button[data-src]')]; idx=set.indexOf(b); opener=b; show(); lb.classList.add('open'); document.getElementById('lbClose').focus();
   }));
   function close(){ lb.classList.remove('open'); if(opener) opener.focus(); }
   document.getElementById('lbClose').onclick=close;
@@ -581,6 +643,13 @@
   document.addEventListener('keydown',e=>{ if(!lb.classList.contains('open')) return;
     if(e.key==='Escape') close(); if(e.key==='ArrowRight') document.getElementById('lbNext').click(); if(e.key==='ArrowLeft') document.getElementById('lbPrev').click(); });
   document.querySelectorAll('.pages, .lb, .hero-art').forEach(el=>el.addEventListener('contextmenu',e=>e.preventDefault()));
+
+  (function(){const sl=document.getElementById('slider'); if(!sl) return; const sls=[...sl.querySelectorAll('.slide')], ds=[...sl.querySelectorAll('.dot')]; let n=0, t=null;
+    const go=i=>{n=(i+sls.length)%sls.length; sls.forEach((x,j)=>x.classList.toggle('on',j===n)); ds.forEach((x,j)=>x.classList.toggle('on',j===n));};
+    const play=()=>{ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; clearInterval(t); t=setInterval(()=>go(n+1),5500); };
+    document.getElementById('sNext').onclick=()=>{go(n+1);play()}; document.getElementById('sPrev').onclick=()=>{go(n-1);play()};
+    ds.forEach(d=>d.onclick=()=>{go(+d.dataset.go);play()});
+    sl.addEventListener('mouseenter',()=>clearInterval(t)); sl.addEventListener('mouseleave',play); sl.addEventListener('focusin',()=>clearInterval(t)); play();})();
 </script>
 </body>
 </html>
