@@ -305,6 +305,25 @@
   .cofounder h3{font-family:var(--serif);font-size:1.5rem;margin:2px 0 6px}
   .cofounder p:last-child{color:var(--ink-soft)}
   @media (max-width:540px){.cofounder{grid-template-columns:1fr}}
+  .founders{display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:28px;margin-top:22px}
+  .flip{all:unset;cursor:pointer;display:block;aspect-ratio:4/5;perspective:1200px}
+  .flip:focus-visible{outline:3px solid var(--coral);outline-offset:4px;border-radius:18px}
+  .flip-in{position:relative;display:block;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+  .flip[aria-pressed="true"] .flip-in{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;border:1.5px solid var(--ink);border-radius:18px;box-shadow:var(--shadow);backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+  .front{background:var(--bg);display:grid;place-items:center}
+  .front .initials{font-family:var(--serif);font-size:4.5rem;font-weight:700;color:#fff}
+  .front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .front .name{position:absolute;left:12px;right:12px;bottom:12px;background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}
+  .front .name b{font-family:var(--serif);font-size:1.2rem}
+  .front .name span{font-size:.85rem;color:var(--ink-soft)}
+  .back{background:var(--card);transform:rotateY(180deg);padding:22px;display:flex;flex-direction:column;gap:8px;text-align:left}
+  .back .bn{font-family:var(--serif);font-size:1.4rem}
+  .back .bt{color:var(--coral);font-size:.7rem}
+  .back .bb{font-size:.93rem;color:var(--ink-soft);line-height:1.5}
+  .back .hint{margin-top:auto;font-size:.65rem;color:var(--ink-soft)}
+  @media (max-width:760px){.founders{grid-template-columns:1fr;max-width:360px}}
+  @media (prefers-reduced-motion:reduce){.flip-in{transition:none}}
 </style>
 </head>
 <body>
@@ -335,7 +354,7 @@
         <h1>Know what's working, <span class="u">why</span>, and <em>what to do next</em>.</h1>
       </div>
       <div>
-        <p class="lede">Squidbird turns social, search, and audience data into strategy. Our CEO, Justine Braun, spent 15 years doing it for Fortune 500 brands. Now we help startups, small businesses, and nonprofits do the same, and automate the busywork around it.</p>
+        <p class="lede">Squidbird turns social, search, and audience data into strategy.</p>
         <div class="ctas"><a class="btn" href="#contact">Get in touch</a><a class="btn ghost" href="#social">See sample reports</a></div>
       </div>
     </div>
@@ -637,21 +656,46 @@
 
 <!-- ============ ABOUT ============ -->
 <section id="about" class="about" style="padding-top:24px">
-  <div class="wrap about-grid">
-    <div class="portrait">
-      <img src="images/logo.svg" alt="" style="width:55%;opacity:.85">
+  <div class="wrap">
+    <p class="mono kicker">The founders</p>
+    <h2>Meet the founders.</h2>
+    <p class="sub">Click a photo to flip it.</p>
+    <div class="founders">
+      <button type="button" class="flip" aria-pressed="false" aria-label="Justine Braun, co-founder and CEO. Click to read more.">
+        <span class="flip-in">
+          <span class="face front" style="--bg:var(--coral)">
+            <span class="initials" aria-hidden="true">JB</span>
+            <img src="images/team/justine.jpg" alt="Justine Braun" onerror="this.remove()">
+            <span class="name"><b>Justine Braun</b><span>Co-founder &amp; CEO</span></span>
+          </span>
+          <span class="face back">
+            <b class="bn">Justine Braun</b><span class="bt mono">Co-founder &amp; CEO · Chicago</span>
+            <span class="bb">Justine started in 2011 as a research assistant for a professor of advertising and philosophy, her first foray into weird data stuff, and has worked in social media analytics ever since.</span>
+            <span class="bb">As Director of Data Science at VML, she led the agency's move to automated social reporting and was part of its award-winning creative data team led by Jason Carmel. She also leads data operations and impact at Lumity, a Chicago workforce nonprofit, where many of the automations on this page were built.</span>
+            <span class="hint mono">Click to flip back</span>
+          </span>
+        </span>
+      </button>
+      <button type="button" class="flip" aria-pressed="false" aria-label="Jonathan Rosenberg, co-founder. Click to read more.">
+        <span class="flip-in">
+          <span class="face front" style="--bg:var(--teal)">
+            <span class="initials" aria-hidden="true">JR</span>
+            <img src="images/team/jonathan.jpg" alt="Jonathan Rosenberg" onerror="this.remove()">
+            <span class="name"><b>Jonathan Rosenberg</b><span>Co-founder</span></span>
+          </span>
+          <span class="face back">
+            <b class="bn">Jonathan Rosenberg</b><span class="bt mono">Co-founder · Austin</span>
+            <span class="bb">Jonathan is the CEO of Jackrabbit Mobile, an app development agency in Austin, Texas, and advises CEOs around the world on AI strategy.</span>
+            <span class="bb">Squidbird and Jackrabbit have partnered on launches for client apps. And yes, he has biked across the country.</span>
+            <span class="hint mono">Click to flip back</span>
+          </span>
+        </span>
+      </button>
     </div>
-    <div>
-      <p class="mono kicker">The founders</p>
-      <h2>Hi, I'm Justine, Squidbird's co-founder &amp; CEO.</h2>
-      <p>I started in 2011 as a research assistant at the University of Illinois for a professor of advertising and philosophy, my first foray into weird data stuff. I've worked in social media analytics ever since: strategy, research and insights, communications, reporting, and a little creative. I've always looked for ways to blend creativity and data.</p>
-      <p>At VML, I was Director of Data Science. I led the agency's move from manual to automated social media reporting and was part of its award-winning creative data team led by Jason Carmel.</p>
-      <p>At Squidbird, I lead our work with startups and mission-driven teams: planning and measuring social, getting real answers out of ad and analytics platforms like Google, Adobe, and Meta, and automating the repetitive work, without needing a big agency budget. I also lead data operations and impact at Lumity, a Chicago workforce nonprofit, where many of the automations above were built.</p>
-      <p style="color:var(--ink-soft);font-size:.95rem">Looking for my art and personal projects? They live at <a href="https://justineanalytics.github.io/">Justine Braun</a>.</p>
-    </div>
+    <p style="color:var(--ink-soft);font-size:.95rem;margin-top:18px">Looking for Justine's art and personal projects? They live at <a href="https://justineanalytics.github.io/">justineanalytics.github.io</a>.</p>
   </div>
   <div class="wrap">
-    <h3 class="subhead">Career timeline</h3>
+    <h3 class="subhead">Justine's career timeline</h3>
     <p class="sub">15 years in social media and marketing analytics, since 2011.</p>
     <ol class="timeline">
       <li style="--c:var(--teal)"><b>University of Illinois</b><span>Research assistant to a professor of advertising &amp; philosophy</span><span>Producer of the217.com</span></li>
@@ -660,17 +704,7 @@
       <li style="--c:var(--lilac)"><b>Swift / VML</b><span>Director of data science</span><span>Member of the creative data team</span></li>
       <li style="--c:var(--coral)"><b>Lumity</b><span>Director of data operations &amp; impact</span></li>
     </ol>
-    <div class="track"><span class="mono">2025 →</span><b>Co-founded Squidbird</b><span>With Jonathan Rosenberg, alongside my role at Lumity</span></div>
-  </div>
-  <div class="wrap">
-    <div class="cofounder">
-      <div class="cf-avatar" aria-hidden="true">JR</div>
-      <div>
-        <p class="mono kicker">Co-founder</p>
-        <h3>Jonathan Rosenberg</h3>
-        <p>Jonathan is the CEO of Jackrabbit Mobile, an app development agency in Austin, Texas. Squidbird and Jackrabbit have partnered on launches for client apps, pairing product and engineering with Squidbird's data, strategy, and automation work.</p>
-      </div>
-    </div>
+    <div class="track"><span class="mono">2025 →</span><b>Co-founded Squidbird</b><span>With Jonathan Rosenberg, alongside her role at Lumity</span></div>
   </div>
 </section>
 
@@ -740,6 +774,7 @@
     document.getElementById('sNext').onclick=()=>{go(n+1);play()}; document.getElementById('sPrev').onclick=()=>{go(n-1);play()};
     ds.forEach(d=>d.onclick=()=>{go(+d.dataset.go);play()});
     sl.addEventListener('mouseenter',()=>clearInterval(t)); sl.addEventListener('mouseleave',play); sl.addEventListener('focusin',()=>clearInterval(t)); play();})();
+  document.querySelectorAll('.flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-pressed',f.getAttribute('aria-pressed')!=='true')));
 </script>
 </body>
 </html>
