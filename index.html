@@ -202,6 +202,25 @@
   .case{margin-top:28px;border:1.5px dashed rgba(246,241,231,.6);border-radius:16px;padding:20px;max-width:46em}
   .case p:last-child{margin-top:6px;font-size:1.05rem}
   .autos .card h3{font-size:1.5rem}
+  .essay{display:grid;grid-template-columns:1fr 1.1fr;gap:34px;align-items:start;margin-top:30px;background:var(--card);border:1.5px solid var(--ink);border-radius:18px;box-shadow:var(--shadow);padding:28px}
+  .silo img{width:100%;height:auto;display:block;border:1.5px solid var(--ink);border-radius:10px;background:#fff}
+  .silo figcaption{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;font-size:.88rem;color:var(--ink-soft)}
+  .silo figcaption b{color:var(--ink)}
+  .essay-text h3{font-family:var(--serif);font-size:1.25rem;margin:16px 0 4px}
+  .essay-text h3:first-child{margin-top:0}
+  .essay-text p{color:var(--ink-soft);margin-bottom:8px}
+  @media (max-width:860px){.essay{grid-template-columns:1fr;padding:20px}}
+  .timeline{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:26px;position:relative}
+  .timeline::before{content:"";position:absolute;left:14px;right:14px;top:14px;border-top:2px dashed var(--ink)}
+  .timeline li{position:relative;padding-top:42px;display:flex;flex-direction:column;gap:4px}
+  .timeline li::before{content:"";position:absolute;top:0;left:0;width:28px;height:28px;border-radius:50%;background:var(--c);border:1.5px solid var(--ink)}
+  .timeline b{font-family:var(--serif);font-size:1.25rem;line-height:1.15}
+  .timeline span{font-size:.9rem;color:var(--ink-soft)}
+  .track{margin-top:22px;margin-left:calc(60% + 8px);display:flex;flex-direction:column;gap:2px;border:1.5px solid var(--ink);border-radius:14px;padding:12px 14px;background:var(--card);box-shadow:3px 3px 0 var(--ink);position:relative}
+  .track b{font-family:var(--serif);font-size:1.15rem}
+  .track span:last-child{font-size:.88rem;color:var(--ink-soft)}
+  .track .mono{color:var(--coral)}
+  @media (max-width:860px){.timeline{grid-template-columns:1fr;gap:18px}.timeline::before{left:13px;right:auto;top:14px;bottom:14px;border-top:0;border-left:2px dashed var(--ink)}.timeline li{padding:0 0 0 44px}.track{margin-left:44px}}
 </style>
 </head>
 <body>
@@ -428,26 +447,46 @@
   </div>
 </section>
 
-<!-- ============ RESEARCH ARCHIVE ============ -->
+<!-- ============ RESEARCH ============ -->
 <section id="research">
   <div class="wrap">
-    <p class="mono kicker">From the archive</p>
-    <h2>Research I'm still proud of.</h2>
-    <div class="grid2">
-      <article class="card">
-        <div class="body">
-          <div class="meta"><span class="mono">Audience research · ~2016</span></div>
-          <h3>Silo Season</h3>
-          <p>A study of how social media was sorting voters into echo chambers that never overlapped. The siloing pointed to the outcome of the 2016 election before it happened.</p>
-          <div class="borrow"><b>What you can borrow</b>Audience mapping: finding the communities in your market and where they split.</div>
-        </div>
-      </article>
+    <p class="mono kicker">Research</p>
+    <h2>Silo Season.</h2>
+    <p class="sub">How social media sorted voters into separate bubbles before the 2016 election, and why the bubbles held even when the topic had nothing to do with politics. Originally published on Khoros.</p>
+    <article class="essay">
+      <figure class="silo">
+        <img src="images/silo.jpg" alt="Two network graphs of tweets. Left: 2016 election tweets split into a separate blue cluster and red cluster joined by a thin neck. Right: Pokémon Go tweets from the same people, mixed more but still leaning blue on top and red on the bottom." width="471" height="260">
+        <figcaption><span><b>2016 election.</b> Republicans and Democrats talking about the election: 95% siloed.</span><span><b>Pokémon Go.</b> The same people talking about Pokémon Go: 68% siloed.</span></figcaption>
+      </figure>
+      <div class="essay-text">
+        <h3>The question</h3>
+        <p>In the run-up to the 2016 election, did Twitter users actually talk across party lines, or did each side mostly talk to itself?</p>
+        <h3>How I measured it</h3>
+        <p>Every dot is a tweet about the 2016 election. I sorted people by the hashtags they had used at some point: blue for pro-Hillary hashtags, red for pro-Trump hashtags. Then I pulled every election-related tweet from both audiences and connected the dots wherever one person replied to or retweeted another.</p>
+        <p>The result was two dense worlds with a narrow bridge between them. Each side was mostly replying to and retweeting itself.</p>
+        <h3>The follow-up</h3>
+        <p>That summer's other big trending topic was Pokémon Go, which had nothing to do with politics. So I looked at the same people talking about it.</p>
+        <p>The siloing was weaker, but it was still there. Even on a topic completely outside politics, people mostly stuck to their own political sphere when deciding who to retweet, reply to, and engage with.</p>
+        <h3>Why it matters for brands</h3>
+        <p>Your audience isn't one crowd. It's a set of communities that rarely talk to each other, and a message that spreads in one may never reach the next. Mapping who talks to whom shows you where a campaign will travel, and where it will stall.</p>
+      </div>
+    </article>
+
+    <div class="grid2" style="margin-top:34px">
       <article class="card">
         <div class="body">
           <div class="meta"><span class="mono">Search &amp; social trends · 2015</span></div>
           <h3>You Google What You Scroll</h3>
           <p>Research showing that what people see on social decides what they search for next, using #JeSuisCharlie to trace how hashtags steered Google searches and the news cycle.</p>
           <div class="borrow"><b>What you can borrow</b>Search and social trend intelligence: knowing what your audience will look for before they look.</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="body">
+          <div class="meta"><span class="mono">Audience mapping</span></div>
+          <h3>Bring this to your audience</h3>
+          <p>The same network analysis works for any market: find the communities around your brand, the bridges between them, and the people who carry a message from one to the next.</p>
+          <div class="borrow"><b>What you can borrow</b>Audience mapping: finding the communities in your market and where they split.</div>
         </div>
       </article>
     </div>
@@ -463,11 +502,23 @@
     <div>
       <p class="mono kicker">About</p>
       <h2>Hi, I'm Justine.</h2>
-      <p>I started as a research assistant at the University of Illinois and moved into people analytics. Then I spent about 15 years in advertising and digital media, where I led social analytics and reporting teams, mined big social data for Fortune 500 brands, and was AI lead building AI applications. At VML, I led the shift from manual to automated social media reporting and worked on the agency's award-winning creative data team led by Jason Carmel.</p>
-      <p>Squidbird is my independent practice. I help startups and mission-driven teams plan and measure their social, get real answers out of Google Analytics and Ads, and automate the repetitive work, without needing a big agency budget. Today I also lead data operations at a Chicago workforce nonprofit, where many of the automations above were built.</p>
-      <p>I care a lot about data ethics. I'd rather show a small team how to do more with less than sell anyone a shiny thing they don't need.</p>
+      <p>I started in 2011 as a psychology research assistant at the University of Illinois, working for Patrick Vargas, PhD, and I've worked in social media analytics ever since: strategy, research and insights, communications, reporting, and a little creative. I've always looked for ways to blend creativity and data.</p>
+      <p>At VML, I was Director of Data Science. I led the agency's move from manual to automated social media reporting and was part of its award-winning creative data team led by Jason Carmel.</p>
+      <p>Squidbird is my independent practice. I help startups and mission-driven teams plan and measure their social, get real answers out of Google Analytics and Ads, and automate the repetitive work, without needing a big agency budget. I also lead data operations and impact at Lumity, a Chicago workforce nonprofit, where many of the automations above were built.</p>
       <p style="color:var(--ink-soft);font-size:.95rem">Looking for my art and personal projects? They live at <a href="https://justineanalytics.github.io/">Justine Braun</a>.</p>
     </div>
+  </div>
+  <div class="wrap">
+    <h3 class="subhead">Career timeline</h3>
+    <p class="sub">15 years in social media and marketing analytics, since 2011.</p>
+    <ol class="timeline">
+      <li style="--c:var(--teal)"><b>University of Illinois</b><span>Psychology research assistant for Patrick Vargas, PhD</span><span>Producer of the217.com</span></li>
+      <li style="--c:#2a6f8c"><b>Real Chemistry</b><span>Social media intern</span><span>Analytics manager</span></li>
+      <li style="--c:var(--gold)"><b>Khoros</b><span>Social strategist</span><span>Co-head of research &amp; insights</span></li>
+      <li style="--c:var(--lilac)"><b>Swift / VML</b><span>Director of data science</span><span>Member of the creative data team</span></li>
+      <li style="--c:var(--coral)"><b>Lumity</b><span>Director of data operations &amp; impact</span></li>
+    </ol>
+    <div class="track"><span class="mono">2025 →</span><b>Founded Squidbird</b><span>Independent marketing analytics &amp; automation practice, running alongside my role at Lumity</span></div>
   </div>
 </section>
 
